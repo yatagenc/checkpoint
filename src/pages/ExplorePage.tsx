@@ -1,42 +1,138 @@
-import { Search, SlidersHorizontal, X } from "lucide-react";
-import { useSearchParams } from "react-router";
+import { useEffect, useState } from "react";
+import { Link, useSearchParams } from "react-router";
+import { Search, X } from "lucide-react";
 import { PageIntro } from "../components/ui/PageIntro";
 import { GameCard } from "../components/games/GameCard";
-import { CatalogState } from "../components/games/CatalogState";
-import { useGames } from "../hooks/useGames";
+import { DemoExplorePage } from "./DemoExplorePage";
+import { rawgClient } from "../services/rawgClient";
+import { rememberGame } from "../services/gameDisplay";
+import { canonicalGame } from "../services/checkpointGameService";
 import {
-  discoverGames,
-  getFilterOptions,
-  readFilters,
-  sortOptions,
-} from "../lib/discovery";
+  rawgGenres,
+  rawgPlatforms,
+  rawgSorts,
+  MAX_PAGE,
+} from "../lib/rawg-contract";
+import type { GamePage } from "../lib/rawg-contract";
+import { useGenres } from "../hooks/useGenres";
+import { games as curatedGames } from "../data/games";
 
 export function ExplorePage() {
-  const [params, setParams] = useSearchParams();
-  const filters = readFilters(params);
-  const { resource, retry } = useGames();
-  const games = resource.status === "ready" ? resource.data : [];
-  const options = getFilterOptions(games);
-  const results = discoverGames(games, filters);
-  const active = Boolean(
-    filters.q ||
-    filters.genre ||
-    filters.platform ||
-    filters.year ||
-    filters.sort !== "title",
+  const [params] = useSearchParams();
+  return params.get("source") === "demo" ? (
+    <>
+      <p className="sample-note">
+        <Link className="text-link" to="/explore">
+          Search the RAWG database ↗
+        </Link>
+      </p>
+      <DemoExplorePage />
+    </>
+  ) : (
+    <RawgExplore />
   );
-  function update(key: string, value: string) {
+}
+function RawgExplore() {
+  const { state: genreState, retry: retryGenres } = useGenres();
+  const genreOptions = genreState?.data?.genres.length
+    ? genreState.data.genres.map(
+        (genre) => [String(genre.id), genre.name] as const,
+      )
+    : rawgGenres;
+  const [params, setParams] = useSearchParams();
+  const query = params.get("q") ?? "";
+  const page = params.get("page") ?? "1";
+  const [attempt, setAttempt] = useState(0);
+  const [state, setState] = useState<{
+    key: string;
+    data?: GamePage;
+    error?: string;
+  }>({ key: "" });
+  const oldPlatforms: Record<string, string> = {
+    pc: "4",
+    ps5: "187",
+    ps4: "18",
+    "xbox-series": "186",
+    "xbox-one": "1",
+    switch: "7",
+    mac: "5",
+    linux: "6",
+  };
+  const selectedGenre = params.get("genre") ?? "";
+  const genre =
+    rawgGenres.find(
+      ([id, label]) => id === selectedGenre || label === selectedGenre,
+    )?.[0] ?? selectedGenre;
+  const platform =
+    oldPlatforms[params.get("platform") ?? ""] ?? params.get("platform") ?? "";
+  const sort = params.get("sort") ?? "relevance";
+  const year = params.get("year") ?? "";
+  const request = new URLSearchParams();
+  for (const [key, value] of Object.entries({
+    q: query.trim(),
+    genre,
+    platform,
+    sort,
+    year,
+    page,
+    page_size: "20",
+  }))
+    if (value) request.set(key, value);
+  const requestKey = request.toString();
+  const key = `${requestKey}:${attempt}`;
+  const tooShort = query.trim().length === 1;
+  useEffect(() => {
+    if (tooShort) return;
+    const controller = new AbortController();
+    const timer = setTimeout(() => {
+      void rawgClient
+        .search(new URLSearchParams(requestKey), controller.signal)
+        .then((data) => {
+          if (!controller.signal.aborted) {
+            const mapped = {
+              ...data,
+              games: [
+                ...new Map(
+                  data.games
+                    .map((game) => canonicalGame(game))
+                    .map((game) => [game.id, game]),
+                ).values(),
+              ],
+            };
+            mapped.games.forEach(rememberGame);
+            setState({ key, data: mapped });
+          }
+        })
+        .catch((error) => {
+          if (!controller.signal.aborted)
+            setState({
+              key,
+              error:
+                error instanceof Error
+                  ? error.message
+                  : "Game discovery is unavailable.",
+            });
+        });
+    }, 400);
+    return () => {
+      clearTimeout(timer);
+      controller.abort();
+    };
+  }, [requestKey, key, tooShort]);
+  function update(name: string, value: string) {
     setParams(
       (previous) => {
         const next = new URLSearchParams(previous);
-        if (value && !(key === "sort" && value === "title"))
-          next.set(key, value);
-        else next.delete(key);
+        next.delete("page");
+        if (value) next.set(name, value);
+        else next.delete(name);
         return next;
       },
-      { replace: key === "q" },
+      { replace: name === "q" },
     );
   }
+  const current = state.key === key ? state : undefined;
+  const numberPage = Number(page);
   return (
     <>
       <PageIntro
@@ -45,8 +141,13 @@ export function ExplorePage() {
         description="A familiar favorite. A different perspective. A game you didn’t know you were looking for."
       />
       <div className="catalog-context">
-        <span className="badge">Local demo catalog</span>
-        <p>36 selected games · Store metadata snapshot · No live rankings</p>
+        <span className="badge">Powered by RAWG</span>
+        <p>
+          On-demand results · 20 games per page ·{" "}
+          <Link className="text-link" to="/explore?source=demo">
+            Browse the {curatedGames.length}-game offline demo ↗
+          </Link>
+        </p>
       </div>
       <section
         className="discovery-controls"
@@ -57,8 +158,9 @@ export function ExplorePage() {
           <input
             type="search"
             aria-label="Search games by title"
-            placeholder="Search for your next story…"
-            value={filters.q}
+            placeholder="Search the game database…"
+            maxLength={100}
+            value={query}
             onChange={(event) => update("q", event.target.value)}
           />
         </div>
@@ -66,127 +168,185 @@ export function ExplorePage() {
           <label>
             Genre
             <select
-              value={filters.genre}
+              value={genre}
               onChange={(event) => update("genre", event.target.value)}
             >
               <option value="">All genres</option>
-              {filters.genre && !options.genres.includes(filters.genre) && (
-                <option value={filters.genre}>
-                  Unknown genre: {filters.genre}
+              {genre && !genreOptions.some(([id]) => id === genre) && (
+                <option value={genre}>
+                  {genreState?.data?.genres.find((item) => item.slug === genre)
+                    ?.name ?? `Selected RAWG genre: ${genre}`}
                 </option>
               )}
-              {options.genres.map((genre) => (
-                <option key={genre}>{genre}</option>
+              {genreOptions.map(([id, label]) => (
+                <option key={id} value={id}>
+                  {label}
+                </option>
               ))}
             </select>
           </label>
           <label>
             Platform
             <select
-              value={filters.platform}
+              value={platform}
               onChange={(event) => update("platform", event.target.value)}
             >
-              <option value="">All verified platforms</option>
-              {filters.platform &&
-                !options.platforms.some(
-                  (platform) => platform.id === filters.platform,
-                ) && (
-                  <option value={filters.platform}>
-                    Unknown platform: {filters.platform}
-                  </option>
-                )}
-              {options.platforms.map((platform) => (
-                <option key={platform.id} value={platform.id}>
-                  {platform.name}
+              <option value="">All platforms</option>
+              {platform && !rawgPlatforms.some(([id]) => id === platform) && (
+                <option value={platform}>
+                  Unsupported platform: {platform}
+                </option>
+              )}
+              {rawgPlatforms.map(([id, label]) => (
+                <option key={id} value={id}>
+                  {label}
                 </option>
               ))}
             </select>
           </label>
           <label>
-            Steam release year
+            Release year
             <select
-              value={filters.year}
+              value={year}
               onChange={(event) => update("year", event.target.value)}
             >
               <option value="">All years</option>
-              {filters.year && !options.years.includes(filters.year) && (
-                <option value={filters.year}>
-                  Unknown year: {filters.year}
-                </option>
+              {year && !/^\d{4}$/.test(year) && (
+                <option value={year}>Unsupported year: {year}</option>
               )}
-              {options.years.map((year) => (
-                <option key={year}>{year}</option>
+              {Array.from(
+                { length: new Date().getUTCFullYear() + 3 - 1970 },
+                (_, index) => String(new Date().getUTCFullYear() + 2 - index),
+              ).map((value) => (
+                <option key={value}>{value}</option>
               ))}
             </select>
           </label>
           <label>
             Sort by
             <select
-              value={filters.sort}
+              value={sort}
               onChange={(event) => update("sort", event.target.value)}
             >
-              {sortOptions.map((sort) => (
-                <option key={sort.value} value={sort.value}>
-                  {sort.label}
+              {!rawgSorts.some(([id]) => id === sort) && (
+                <option value={sort}>Unsupported sorting</option>
+              )}
+              {rawgSorts.map(([id, label]) => (
+                <option key={id} value={id}>
+                  {label}
                 </option>
               ))}
             </select>
           </label>
         </div>
       </section>
-      {resource.status === "loading" ? (
-        <CatalogState />
-      ) : resource.status === "error" ? (
-        <CatalogState error retry={retry} />
-      ) : (
+      {!genreState && (
+        <p className="sample-note" role="status">
+          Loading RAWG genre filters…
+        </p>
+      )}
+      {genreState?.error && (
+        <p className="sample-note">
+          Genre metadata is unavailable; supported fallback filters remain
+          available.{" "}
+          <button className="text-button" onClick={retryGenres}>
+            Retry genre filters
+          </button>
+        </p>
+      )}
+      <div className="collection-bar results-bar">
+        <p role="status" aria-live="polite">
+          {tooShort
+            ? "Enter at least two characters."
+            : !current
+              ? "Searching RAWG…"
+              : current.error
+                ? "Search unavailable"
+                : `${current.data?.count.toLocaleString()} matching games · Page ${page}`}
+        </p>
+        <button
+          className="clear-filters"
+          disabled={!params.size}
+          onClick={() => setParams({})}
+        >
+          <X size={14} /> Clear filters
+        </button>
+      </div>
+      {!tooShort && !current && (
+        <div className="catalog-state" role="status">
+          <h2>Discovering worlds…</h2>
+          <p>Loading this page from RAWG.</p>
+        </div>
+      )}
+      {current?.error && (
+        <div className="catalog-state" role="alert">
+          <h2>The game database is taking a pause.</h2>
+          <p>{current.error}</p>
+          <button
+            className="button button-secondary"
+            onClick={() => setAttempt((value) => value + 1)}
+          >
+            Try again
+          </button>
+          <p>
+            <Link className="text-link" to="/explore?source=demo">
+              Open the offline demo catalog ↗
+            </Link>
+          </p>
+        </div>
+      )}
+      {!tooShort && current?.data && (
         <>
-          <div className="collection-bar results-bar">
-            <p role="status" aria-live="polite">
-              <strong>{results.length}</strong>{" "}
-              {results.length === 1 ? "game" : "games"}
-              {filters.q.trim() && <> matching “{filters.q.trim()}”</>}
-            </p>
-            <button
-              className="clear-filters"
-              disabled={!active}
-              onClick={() => setParams({})}
-            >
-              <X size={14} /> Clear filters
-            </button>
-          </div>
-          {results.length ? (
+          {current.data.games.length ? (
             <div className="game-grid discovery-grid">
-              {results.map((game) => (
+              {current.data.games.map((game) => (
                 <GameCard key={game.id} game={game} />
               ))}
             </div>
           ) : (
             <div className="empty-state">
-              <span className="icon-tile">
-                <SlidersHorizontal size={25} />
-              </span>
               <h2>No worlds on this path.</h2>
-              <p>
-                Try another title or broaden your filters. This demo collection
-                is deliberately small.
-              </p>
-              <button
-                className="button button-secondary"
-                onClick={() => setParams({})}
-              >
-                Reset discovery
-              </button>
+              <p>Try another title or broaden your filters.</p>
             </div>
           )}
-          <p className="subtle-notice">
-            Demo catalog, not a live game database. Release dates and Metacritic
-            scores describe the Steam edition. Platform filters cover verified
-            desktop support and selected console releases, not an exhaustive
-            platform list. Promotional artwork is served from Steam;
-            descriptions and tags are Checkpoint editorial selections.
-          </p>
+          <nav className="pagination" aria-label="Game result pages">
+            <button
+              className="button button-secondary"
+              disabled={numberPage <= 1}
+              onClick={() => update("page", String(numberPage - 1))}
+            >
+              Previous page
+            </button>
+            <span>
+              Page {page}
+              {numberPage === MAX_PAGE
+                ? " · Search limit reached; narrow your filters."
+                : ""}
+            </span>
+            <button
+              className="button button-secondary"
+              disabled={!current.data.hasNext}
+              onClick={() => update("page", String(numberPage + 1))}
+            >
+              Next page
+            </button>
+          </nav>
         </>
       )}
+      <p className="subtle-notice">
+        Game data and imagery via{" "}
+        <a
+          className="text-link"
+          href="https://rawg.io"
+          target="_blank"
+          rel="noreferrer"
+        >
+          RAWG ↗
+        </a>
+        . Filters and sorting apply across the database on the server.
+        Metacritic and RAWG ratings are separate from your personal scores.
+        Unmapped curated editions retain their own identities.
+      </p>
     </>
   );
 }

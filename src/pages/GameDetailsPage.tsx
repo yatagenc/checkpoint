@@ -26,10 +26,17 @@ export function GameDetailsPage() {
       {resource.status === "loading" ? (
         <CatalogState />
       ) : resource.status === "error" ? (
-        <CatalogState error retry={retry} />
+        <CatalogState error retry={retry} message={resource.message} />
       ) : (
         resource.data && (
-          <GameDetails key={resource.data.id} game={resource.data} />
+          <>
+            {resource.data.availability === "snapshot" && (
+              <button className="button button-secondary" onClick={retry}>
+                Refresh game metadata
+              </button>
+            )}
+            <GameDetails key={resource.data.id} game={resource.data} />
+          </>
         )
       )}
     </>

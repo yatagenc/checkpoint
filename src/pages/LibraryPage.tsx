@@ -5,13 +5,13 @@ import { EmptyState } from "../components/ui/EmptyState";
 import { PageIntro } from "../components/ui/PageIntro";
 import { CatalogState } from "../components/games/CatalogState";
 import { LibraryCard } from "../components/personal/LibraryCard";
-import { useGames } from "../hooks/useGames";
+import { useSavedGames } from "../hooks/useSavedGames";
 import { usePersonalData } from "../hooks/usePersonalData";
 import { statuses } from "../lib/personal";
 
 export function LibraryPage() {
   const { data } = usePersonalData();
-  const { resource, retry } = useGames();
+  const { resource, retry } = useSavedGames();
   const [query, setQuery] = useState("");
   const [status, setStatus] = useState("");
   const [sort, setSort] = useState("newest");

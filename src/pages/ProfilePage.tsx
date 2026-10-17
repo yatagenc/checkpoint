@@ -5,14 +5,14 @@ import { SectionHeading } from "../components/ui/SectionHeading";
 import { GameCard } from "../components/games/GameCard";
 import { CatalogState } from "../components/games/CatalogState";
 import { ReviewCard } from "../components/personal/ReviewCard";
-import { useGames } from "../hooks/useGames";
+import { useSavedGames } from "../hooks/useSavedGames";
 import { usePersonalData } from "../hooks/usePersonalData";
 import { personalStats } from "../lib/personal";
 import { JournalProfile } from "../components/journals/JournalProfile";
 
 export function ProfilePage() {
   const { data } = usePersonalData();
-  const { resource, retry } = useGames();
+  const { resource, retry } = useSavedGames();
   const stats = personalStats(data);
   const games = new Map(
     (resource.status === "ready" ? resource.data : []).map((game) => [

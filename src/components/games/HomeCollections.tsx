@@ -1,8 +1,8 @@
-import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Link } from "react-router";
 import { useGames } from "../../hooks/useGames";
 import { featuredGameIds } from "../../data/collections";
-import { discoverGames, getFilterOptions } from "../../lib/discovery";
+import { discoverGames } from "../../lib/discovery";
 import { SectionHeading } from "../ui/SectionHeading";
 import { GameCard } from "./GameCard";
 import { CatalogState } from "./CatalogState";
@@ -63,24 +63,6 @@ export function HomeCollections() {
           </div>
         </section>
       ))}
-      <section className="section genre-section">
-        <SectionHeading
-          eyebrow="FOLLOW YOUR CURIOSITY"
-          title="Discover by genre"
-        />
-        <div className="genre-grid">
-          {getFilterOptions(games).genres.map((genre) => (
-            <Link key={genre} to={`/explore?${new URLSearchParams({ genre })}`}>
-              <span>{genre}</span>
-              <small>
-                {games.filter((game) => game.genres.includes(genre)).length}{" "}
-                games
-              </small>
-              <ArrowUpRight size={17} />
-            </Link>
-          ))}
-        </div>
-      </section>
     </>
   );
 }

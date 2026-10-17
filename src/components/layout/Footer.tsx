@@ -15,7 +15,9 @@ export function Footer() {
           <Link to="/explore">
             Discover <ArrowUpRight size={13} />
           </Link>
-          <span>Phase 04 · Local journals</span>
+          <a href="https://rawg.io" target="_blank" rel="noreferrer">
+            Game data & imagery via RAWG ↗
+          </a>
         </div>
       </div>
     </footer>

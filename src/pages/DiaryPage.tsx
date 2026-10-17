@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate, useSearchParams } from "react-router";
 import { BookOpen } from "lucide-react";
-import { useGames } from "../hooks/useGames";
+import { useSavedGames } from "../hooks/useSavedGames";
 import { usePersonalData } from "../hooks/usePersonalData";
 import { playthroughStatuses } from "../lib/journals";
 import { PageIntro } from "../components/ui/PageIntro";
@@ -11,7 +11,7 @@ import { PlaythroughCard } from "../components/journals/PlaythroughCard";
 
 export function DiaryPage() {
   const { journals } = usePersonalData();
-  const { resource, retry } = useGames();
+  const { resource, retry } = useSavedGames();
   const [params, setParams] = useSearchParams();
   const navigate = useNavigate();
   const [creating, setCreating] = useState(false);

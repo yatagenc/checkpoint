@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router";
 import { ArrowLeft, Plus } from "lucide-react";
 import { usePersonalData } from "../hooks/usePersonalData";
-import { useGames } from "../hooks/useGames";
+import { useSavedGames } from "../hooks/useSavedGames";
 import { chronologicalEntries, playthroughStatuses } from "../lib/journals";
 import { formatReleaseDate } from "../lib/discovery";
 import { PageIntro } from "../components/ui/PageIntro";
@@ -17,7 +17,7 @@ export function PlaythroughPage() {
 }
 function PlaythroughView({ playthroughId }: { playthroughId: string }) {
   const { journals, dispatchJournal } = usePersonalData();
-  const { resource } = useGames();
+  const { resource } = useSavedGames();
   const [editing, setEditing] = useState(false);
   const [adding, setAdding] = useState(false);
   const [deleting, setDeleting] = useState(false);

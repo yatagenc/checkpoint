@@ -1,9 +1,11 @@
 export function CatalogState({
   error = false,
   retry,
+  message,
 }: {
   error?: boolean;
   retry?: () => void;
+  message?: string;
 }) {
   return (
     <div className="catalog-state" role={error ? "alert" : "status"}>
@@ -15,7 +17,7 @@ export function CatalogState({
       </h2>
       {error && (
         <>
-          <p>Please try again in a moment.</p>
+          <p>{message ?? "Please try again in a moment."}</p>
           <button className="button button-secondary" onClick={retry}>
             Try again
           </button>

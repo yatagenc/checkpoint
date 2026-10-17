@@ -1,13 +1,13 @@
 import { Link } from "react-router";
 import { usePersonalData } from "../../hooks/usePersonalData";
-import { useGames } from "../../hooks/useGames";
+import { useSavedGames } from "../../hooks/useSavedGames";
 import { journalStats } from "../../lib/journals";
 import { SectionHeading } from "../ui/SectionHeading";
 import { JournalEntryCard } from "./JournalEntryCard";
 
 export function JournalProfile() {
   const { journals } = usePersonalData();
-  const { resource } = useGames();
+  const { resource } = useSavedGames();
   const stats = journalStats(journals);
   const games = new Map(
     (resource.status === "ready" ? resource.data : []).map((game) => [

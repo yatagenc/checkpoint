@@ -35,7 +35,7 @@ test("discovery and routes work through React event handlers", async (t) => {
   };
   const { createElement: h, act } = await import("react");
   const { createRoot } = await import("react-dom/client");
-  const { MemoryRouter, useLocation, useNavigate } =
+  const { MemoryRouter, useLocation, useNavigate, Routes, Route } =
     await import("react-router");
   const { renderToStaticMarkup } = await import("react-dom/server");
   const vite = await createServer({
@@ -43,7 +43,40 @@ test("discovery and routes work through React event handlers", async (t) => {
     appType: "custom",
   });
   let root;
+  const nativeFetch = globalThis.fetch;
   try {
+    const { normalizeGame: normalizeFixture } = await vite.ssrLoadModule(
+      "/server/rawg-normalize.ts",
+    );
+    const genreFixture = {
+      genres: [
+        { id: 4, name: "Action", slug: "action", gamesCount: 123456 },
+        {
+          id: 5,
+          name: "RPG",
+          slug: "role-playing-games-rpg",
+          gamesCount: 54321,
+        },
+      ],
+      count: 2,
+      page: 1,
+      hasNext: false,
+    };
+    globalThis.fetch = async (input) => {
+      const params = new URL(String(input), "http://localhost").searchParams;
+      if (params.get("resource") === "genres")
+        return Response.json(genreFixture);
+      if (params.get("genre") === "4")
+        return Response.json({
+          games: [
+            normalizeFixture({ id: 700111, name: "Genre filter fixture" }),
+          ],
+          count: 1,
+          page: 1,
+          hasNext: false,
+        });
+      throw new Error("Unexpected HTTP request in DOM test");
+    };
     const { default: App } = await vite.ssrLoadModule("/src/App.tsx");
     const { PersonalProvider } = await vite.ssrLoadModule(
       "/src/context/PersonalProvider.tsx",
@@ -55,6 +88,25 @@ test("discovery and routes work through React event handlers", async (t) => {
       "/src/services/mockGameService.ts",
     );
     const games = await mockGameService.listGames();
+    // Keep the existing curated-discovery suite, separate from live-adapter DOM scenarios.
+    const { DemoExplorePage } = await vite.ssrLoadModule(
+      "/src/pages/DemoExplorePage.tsx",
+    );
+    const { AppLayout } = await vite.ssrLoadModule(
+      "/src/components/layout/AppLayout.tsx",
+    );
+    function DemoTestApp() {
+      return h(
+        Routes,
+        null,
+        h(
+          Route,
+          { path: "/explore", element: h(AppLayout) },
+          h(Route, { index: true, element: h(DemoExplorePage) }),
+        ),
+        h(Route, { path: "*", element: h(App) }),
+      );
+    }
     function Probe() {
       const location = useLocation();
       const navigate = useNavigate();
@@ -74,7 +126,7 @@ test("discovery and routes work through React event handlers", async (t) => {
         ),
       );
     }
-    async function render(path) {
+    async function render(path, live = false) {
       if (root) await act(async () => root.unmount());
       document.body.innerHTML = '<div id="test-root"></div>';
       root = createRoot(document.getElementById("test-root"));
@@ -83,7 +135,7 @@ test("discovery and routes work through React event handlers", async (t) => {
           h(
             MemoryRouter,
             { initialEntries: [path] },
-            h(PersonalProvider, null, h(App)),
+            h(PersonalProvider, null, h(live ? App : DemoTestApp)),
             h(Probe),
           ),
         ),
@@ -183,7 +235,12 @@ test("discovery and routes work through React event handlers", async (t) => {
       async () => {
         await render("/");
         assert.match(query("h1").textContent, /Great games/);
-        assert.equal(document.querySelectorAll(".genre-grid a").length, 7);
+        assert.equal(document.querySelectorAll(".genre-grid a").length, 2);
+        assert.match(query(".genre-grid").textContent, /123,456 games on RAWG/);
+        assert.equal(
+          query(".genre-grid a").getAttribute("href"),
+          "/explore?genre=4",
+        );
         await click(".hero-copy a");
         assert.match(query("#location").textContent, /^\/explore/);
         assert.equal(cardIds().length, 36);
@@ -245,8 +302,11 @@ test("discovery and routes work through React event handlers", async (t) => {
           document.querySelectorAll("main select")[1].value,
           "switch",
         );
-        await render("/");
+        await render("/", true);
         await click(".genre-grid a");
+        await act(async () => {
+          await new Promise((resolve) => setTimeout(resolve, 450));
+        });
         assert.match(query("#location").textContent, /genre=/);
         assert.ok(cardIds().length);
       },
@@ -1121,15 +1181,427 @@ test("discovery and routes work through React event handlers", async (t) => {
           await render("/library");
           assert.ok(document.querySelector(".library-card"));
           assert.ok(document.querySelector(".library-card button"));
-          assert.ok(document.querySelector("main [role=alert]"));
+          assert.ok(!document.querySelector("main [role=alert]"));
         } finally {
           mockGameService.listGames = original;
         }
-        await clickText("Try again");
+        await render("/library");
         assert.ok(document.querySelector(".library-card"));
       },
     );
+    await t.test(
+      "RAWG search debounces, pages and sends global filter parameters without bulk requests",
+      async () => {
+        const original = globalThis.fetch;
+        const { normalizeGame } = await vite.ssrLoadModule(
+          "/server/rawg-normalize.ts",
+        );
+        const remote = normalizeGame({
+          id: 701234,
+          name: "Animal discovery fixture",
+          slug: "animal-fixture",
+          released: "2024-05-09",
+        });
+        const calls = [];
+        globalThis.fetch = async (input) => {
+          const url = new URL(String(input), "http://localhost");
+          assert.equal(url.pathname, "/.netlify/functions/rawg");
+          calls.push(url.searchParams);
+          return Response.json({
+            games: [remote],
+            count: 42,
+            page: Number(url.searchParams.get("page") ?? 1),
+            hasNext: true,
+          });
+        };
+        const settle = async () =>
+          act(async () => {
+            await new Promise((resolve) => setTimeout(resolve, 450));
+          });
+        try {
+          await render("/explore", true);
+          await type(".discovery-search input", "An");
+          await type(".discovery-search input", "Animal");
+          assert.equal(calls.length, 0);
+          await settle();
+          assert.equal(calls.length, 1);
+          assert.equal(calls[0].get("q"), "Animal");
+          assert.deepEqual(cardIds(), ["rawg:701234"]);
+          await clickText("Next page");
+          await settle();
+          assert.equal(calls.length, 2);
+          assert.equal(calls[1].get("page"), "2");
+          await select(0, "4");
+          await select(1, "4");
+          await select(2, "2024");
+          await select(3, "rating");
+          await settle();
+          assert.equal(calls.length, 3);
+          assert.equal(calls[2].get("genre"), "4");
+          assert.equal(calls[2].get("platform"), "4");
+          assert.equal(calls[2].get("year"), "2024");
+          assert.equal(calls[2].get("sort"), "rating");
+          assert.equal(calls[2].get("page"), "1");
+          await type(".discovery-search input", "x");
+          await settle();
+          assert.equal(calls.length, 3);
+          assert.match(query("main").textContent, /at least two/);
+        } finally {
+          globalThis.fetch = original;
+        }
+      },
+    );
+    await t.test(
+      "RAWG details support persistent library, review, favorites and journals; screenshots are requested explicitly",
+      async () => {
+        const original = globalThis.fetch;
+        const { normalizeGame } = await vite.ssrLoadModule(
+          "/server/rawg-normalize.ts",
+        );
+        const remote = normalizeGame({
+          id: 701235,
+          name: "Remote journey fixture",
+          slug: "remote-journey",
+          description_raw: "Remote description <script>safe text</script>",
+          released: "2024-05-09",
+          rating: 4.1,
+          ratings_count: 10,
+        });
+        let screenshotCalls = 0;
+        let detailsCalls = 0;
+        globalThis.fetch = async (input) => {
+          const params = new URL(String(input), "http://localhost")
+            .searchParams;
+          if (params.get("resource") === "screenshots") {
+            screenshotCalls++;
+            return Response.json({
+              screenshots: [
+                {
+                  url: "https://media.rawg.io/fixture.jpg",
+                  alt: "Fixture screenshot",
+                },
+              ],
+              page: 1,
+              hasNext: false,
+            });
+          }
+          detailsCalls++;
+          return Response.json({ game: remote });
+        };
+        try {
+          await render("/games/rawg:701235", true);
+          assert.equal(query("h1").textContent, "Remote journey fixture");
+          assert.equal(detailsCalls, 1);
+          assert.equal(screenshotCalls, 0);
+          assert.equal(document.querySelector("main script"), null);
+          await clickText("Add to Library");
+          await field(".game-personal-actions .rating-select", "4.5");
+          await click(".game-personal-actions .favorite-button");
+          await clickText("Write Review");
+          await field("dialog textarea[name=reviewText]", "A remote review.");
+          await submitDialog();
+          assert.ok(
+            stored().library.some(
+              (entry) =>
+                entry.gameId === "rawg:701235" &&
+                entry.rating === 4.5 &&
+                entry.favoriteOrder !== undefined,
+            ),
+          );
+          assert.ok(
+            stored().reviews.some((review) => review.gameId === "rawg:701235"),
+          );
+          const display = JSON.parse(
+            dom.window.localStorage.getItem("checkpoint:v1:game-display"),
+          ).data.find((item) => item.id === "rawg:701235");
+          assert.equal(display.title, remote.title);
+          assert.equal(display.description, undefined);
+          assert.equal(display.rating, undefined);
+          await clickText("Load screenshots from RAWG");
+          assert.equal(screenshotCalls, 1);
+          assert.ok(document.querySelector(".screenshot-grid a"));
+          await clickText("Start a playthrough");
+          await field(
+            "dialog input[name=playthroughTitle]",
+            "A remote journey",
+          );
+          await submitDialog();
+          assert.match(query("h1").textContent, /A remote journey/);
+          assert.ok(
+            journalStored().playthroughs.some(
+              (item) => item.gameId === "rawg:701235",
+            ),
+          );
+          globalThis.fetch = async () => {
+            throw new Error("Offline");
+          };
+          await render("/library", true);
+          assert.match(query("main").textContent, /Remote journey fixture/);
+          await render("/profile", true);
+          assert.match(query("main").textContent, /A remote review/);
+          await render("/diary", true);
+          assert.match(query("main").textContent, /A remote journey/);
+        } finally {
+          globalThis.fetch = original;
+        }
+      },
+    );
+    await t.test(
+      "RAWG error, retry, empty state and explicit demo fallback remain distinct",
+      async () => {
+        const original = globalThis.fetch;
+        let fail = true;
+        globalThis.fetch = async () =>
+          fail
+            ? Response.json(
+                { error: "private upstream details" },
+                { status: 503 },
+              )
+            : Response.json({ games: [], count: 0, page: 1, hasNext: false });
+        const settle = async () =>
+          act(async () => {
+            await new Promise((resolve) => setTimeout(resolve, 450));
+          });
+        try {
+          await render("/explore?q=NoResultsFixture", true);
+          await settle();
+          assert.match(
+            query("main [role=alert]").textContent,
+            /server environment/,
+          );
+          assert.ok(
+            !query("main").textContent.includes("private upstream details"),
+          );
+          fail = false;
+          await clickText("Try again");
+          await settle();
+          assert.match(query("main").textContent, /No worlds on this path/);
+          await render("/explore?source=demo", true);
+          assert.equal(cardIds().length, 36);
+          assert.match(query("main").textContent, /Local demo catalog/);
+        } finally {
+          globalThis.fetch = original;
+        }
+      },
+    );
+    await t.test(
+      "obsolete RAWG searches are canceled and late responses never replace newer results",
+      async () => {
+        const original = globalThis.fetch;
+        const pending = new Map();
+        const { normalizeGame } = await vite.ssrLoadModule(
+          "/server/rawg-normalize.ts",
+        );
+        globalThis.fetch = (input, options) =>
+          new Promise((resolve) =>
+            pending.set(
+              new URL(String(input), "http://localhost").searchParams.get("q"),
+              { resolve, signal: options.signal },
+            ),
+          );
+        const settle = async () =>
+          act(async () => {
+            await new Promise((resolve) => setTimeout(resolve, 450));
+          });
+        try {
+          await render("/explore?q=RaceOld", true);
+          await settle();
+          await type(".discovery-search input", "RaceNew");
+          await settle();
+          assert.ok(pending.get("RaceOld").signal.aborted);
+          await act(async () =>
+            pending.get("RaceNew").resolve(
+              Response.json({
+                games: [normalizeGame({ id: 701240, name: "New result" })],
+                count: 1,
+                page: 1,
+                hasNext: false,
+              }),
+            ),
+          );
+          assert.deepEqual(cardIds(), ["rawg:701240"]);
+          await act(async () =>
+            pending.get("RaceOld").resolve(
+              Response.json({
+                games: [normalizeGame({ id: 701241, name: "Old result" })],
+                count: 1,
+                page: 1,
+                hasNext: false,
+              }),
+            ),
+          );
+          assert.deepEqual(cardIds(), ["rawg:701240"]);
+        } finally {
+          for (const item of pending.values())
+            item.resolve(
+              Response.json({ games: [], count: 0, page: 1, hasNext: false }),
+            );
+          globalThis.fetch = original;
+        }
+      },
+    );
+    await t.test(
+      "genre loading, failure, retry and unavailable states never substitute local counts",
+      async () => {
+        const { rawgClient } = await vite.ssrLoadModule(
+          "/src/services/rawgClient.ts",
+        );
+        const original = rawgClient.genres;
+        let resolveGenres;
+        try {
+          rawgClient.genres = () =>
+            new Promise((resolve) => {
+              resolveGenres = resolve;
+            });
+          await render("/", true);
+          assert.match(
+            query(".genre-section").textContent,
+            /Loading RAWG genres/,
+          );
+          assert.equal(document.querySelectorAll(".genre-grid a").length, 0);
+          await act(async () =>
+            resolveGenres({ genres: [], count: 0, page: 1, hasNext: false }),
+          );
+          assert.match(
+            query(".genre-section").textContent,
+            /currently unavailable/,
+          );
+          assert.equal(document.querySelectorAll(".genre-grid a").length, 0);
+          rawgClient.genres = async () => {
+            throw new Error("Offline");
+          };
+          await render("/", true);
+          assert.match(
+            query(".genre-section [role=alert]").textContent,
+            /Counts are unavailable/,
+          );
+          rawgClient.genres = original;
+          await clickText("Retry genres");
+          assert.match(
+            query(".genre-grid").textContent,
+            /123,456 games on RAWG/,
+          );
+        } finally {
+          rawgClient.genres = original;
+        }
+      },
+    );
+    await t.test(
+      "RDR2 platform scores are labeled separately and do not alter library or review data",
+      async () => {
+        const original = globalThis.fetch;
+        const { normalizeGame } = await vite.ssrLoadModule(
+          "/server/rawg-normalize.ts",
+        );
+        const remote = normalizeGame({
+          id: 28,
+          name: "Red Dead Redemption 2",
+          metacritic: 96,
+          metacritic_platforms: [
+            {
+              metascore: 97,
+              platform: { platform: 18, name: "PlayStation 4" },
+            },
+            { metascore: 93, platform: { platform: 4, name: "PC" } },
+            { metascore: 97, platform: { platform: 1, name: "Xbox One" } },
+          ],
+        });
+        globalThis.fetch = async () => Response.json({ game: remote });
+        const before = stored();
+        try {
+          await render("/games/rawg:28", true);
+          const scores = [
+            ...document.querySelectorAll(".metacritic-score"),
+          ].map((node) => node.textContent.replace(/\s+/g, " ").trim());
+          assert.ok(
+            scores.some(
+              (text) =>
+                text.includes("96") && text.includes("Platform unspecified"),
+            ),
+          );
+          assert.ok(
+            scores.some(
+              (text) => text.includes("93") && text.includes("Metacritic · PC"),
+            ),
+          );
+          assert.ok(
+            scores.some(
+              (text) => text.includes("97") && text.includes("PlayStation 4"),
+            ),
+          );
+          assert.ok(
+            scores.some(
+              (text) => text.includes("97") && text.includes("Xbox One"),
+            ),
+          );
+          await clickText("Add to Library");
+          await field(".game-personal-actions .rating-select", "2.5");
+          await clickText("Write Review");
+          await field(
+            "dialog textarea[name=reviewText]",
+            "Personal opinion stays separate from critic scores.",
+          );
+          await submitDialog();
+          assert.equal(
+            stored().library.find((item) => item.gameId === "rawg:28").rating,
+            2.5,
+          );
+          assert.equal(
+            stored().reviews.find((item) => item.gameId === "rawg:28").rating,
+            2.5,
+          );
+          await render("/library", true);
+          assert.match(query("main").textContent, /Red Dead Redemption 2/);
+          assert.deepEqual(
+            stored().library.filter((item) => item.gameId !== "rawg:28"),
+            before.library,
+          );
+          assert.deepEqual(
+            stored().reviews.filter((item) => item.gameId !== "rawg:28"),
+            before.reviews,
+          );
+          const { GameCard } = await vite.ssrLoadModule(
+            "/src/components/games/GameCard.tsx",
+          );
+          const card = (game) =>
+            JSDOM.fragment(
+              renderToStaticMarkup(
+                h(MemoryRouter, null, h(GameCard, { game })),
+              ),
+            );
+          assert.match(
+            card(remote).querySelector(".card-score-context").textContent,
+            /Platform unspecified/,
+          );
+          const platformOnly = {
+            ...remote,
+            metacritic: null,
+            metacriticPlatforms: remote.metacriticPlatforms.filter(
+              (item) => item.platform === "PC",
+            ),
+          };
+          assert.match(
+            card(platformOnly).querySelector(".card-score-context").textContent,
+            /Metacritic · PC/,
+          );
+          assert.match(
+            card(platformOnly).querySelector(".critic-badge").textContent,
+            /93/,
+          );
+          const missing = {
+            ...remote,
+            metacritic: null,
+            metacriticPlatforms: [],
+          };
+          assert.equal(card(missing).querySelector(".critic-badge"), null);
+          assert.match(card(missing).textContent, /Metacritic unavailable/);
+        } finally {
+          globalThis.fetch = original;
+        }
+      },
+    );
   } finally {
+    globalThis.fetch = nativeFetch;
     if (root) await act(async () => root.unmount());
     await vite.close();
     dom.window.close();

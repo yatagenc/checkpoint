@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import type { ReactNode } from "react";
 import { storage } from "../lib/storage";
+import { rememberSavedGame } from "../services/gameDisplay";
 import {
   emptyPersonalData,
   isPersonalData,
@@ -85,6 +86,8 @@ export function PersonalProvider({ children }: { children: ReactNode }) {
             "Couldn’t save your journal to this device. Storage may be blocked or full. Your changes have not been applied.",
         };
       journalRevision.current = write.raw;
+      if (action.type === "create-playthrough")
+        rememberSavedGame(action.gameId);
       const id =
         action.type === "create-playthrough"
           ? next.playthroughs.find(
@@ -169,6 +172,8 @@ export function PersonalProvider({ children }: { children: ReactNode }) {
             "Couldn’t save to this device. Storage may be blocked or full. Your changes have not been applied.",
         };
       personalRevision.current = write.raw;
+      if (action.type !== "remove" && action.type !== "delete-review")
+        rememberSavedGame(action.gameId);
       current.current = next;
       setData(next);
       setStorageStatus("ready");

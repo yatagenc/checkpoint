@@ -72,7 +72,18 @@ export function isGameMetadata(value: unknown): value is Game {
       (record(game.metacritic) &&
         number(game.metacritic.score, 0, 100) &&
         https(game.metacritic.url) &&
-        text(game.metacritic.platform))) &&
+        nullableText(game.metacritic.platform))) &&
+    (game.metacriticPlatforms === undefined ||
+      (Array.isArray(game.metacriticPlatforms) &&
+        game.metacriticPlatforms.length <= 40 &&
+        game.metacriticPlatforms.every(
+          (item) =>
+            record(item) &&
+            number(item.score, 0, 100) &&
+            https(item.url) &&
+            nullableText(item.platform) &&
+            (item.platformId === undefined || text(item.platformId)),
+        ))) &&
     (game.communityRating === null ||
       (record(game.communityRating) &&
         number(game.communityRating.value, 0, 5) &&

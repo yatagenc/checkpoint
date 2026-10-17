@@ -9,7 +9,15 @@ export interface GamePlatform {
   name: string;
   abbreviation: string;
 }
+export interface MetacriticScore {
+  score: number;
+  url: string;
+  /** null means the provider did not identify a platform; never infer it from a score. */
+  platform: string | null;
+  platformId?: string;
+}
 export interface Game {
+  availability?: "snapshot";
   /** Optional provider mappings never replace the canonical persisted id. */
   providerIds?: Partial<Record<GameProvider, string>>;
   id: string;
@@ -26,7 +34,8 @@ export interface Game {
   backgroundUrl: string | null;
   tags: string[];
   screenshots: { url: string; alt: string }[];
-  metacritic: { score: number; url: string; platform: string } | null;
+  metacritic: MetacriticScore | null;
+  metacriticPlatforms?: MetacriticScore[];
   communityRating: { value: number; count: number; url: string } | null;
   estimatedPlaytimeHours: number | null;
   externalLinks: { label: string; url: string }[];

@@ -1,6 +1,9 @@
 import type { GameService } from "./game-service.types";
 import { mockGameService } from "./mockGameService";
-import { createMixedGameService } from "./mixedGameService";
+import { createCheckpointService } from "./checkpointGameService";
+import { rawgClient } from "./rawgClient";
 
-// Select a future RAWG adapter here. No live calls or API key in Phase 2.
-export const gameService: GameService = createMixedGameService(mockGameService);
+export const gameService: GameService = createCheckpointService(
+  mockGameService,
+  rawgClient,
+);

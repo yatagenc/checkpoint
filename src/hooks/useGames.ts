@@ -1,8 +1,11 @@
 import { useCallback, useEffect, useState } from "react";
 import { gameService } from "../services/gameService";
+import { GameApiError } from "../lib/rawg-contract";
 
 type Resource<T> =
-  { status: "loading" } | { status: "ready"; data: T } | { status: "error" };
+  | { status: "loading" }
+  | { status: "ready"; data: T }
+  | { status: "error"; message?: string };
 
 function useGameResource<T>(
   key: string,
@@ -22,9 +25,16 @@ function useGameResource<T>(
         if (!controller.signal.aborted)
           setState({ key: requestKey, resource: { status: "ready", data } });
       })
-      .catch(() => {
+      .catch((error) => {
         if (!controller.signal.aborted)
-          setState({ key: requestKey, resource: { status: "error" } });
+          setState({
+            key: requestKey,
+            resource: {
+              status: "error",
+              message:
+                error instanceof GameApiError ? error.message : undefined,
+            },
+          });
       });
     return () => controller.abort();
   }, [requestKey, load]);

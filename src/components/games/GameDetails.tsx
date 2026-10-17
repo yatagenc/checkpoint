@@ -8,10 +8,16 @@ import { GamePersonalActions } from "../personal/GamePersonalActions";
 import { ReviewCard } from "../personal/ReviewCard";
 import { usePersonalData } from "../../hooks/usePersonalData";
 import { GameJournals } from "../journals/GameJournals";
+import { RemoteScreenshots } from "./RemoteScreenshots";
+import {
+  metacriticScores,
+  metacriticPlatformLabel,
+} from "../../lib/metacritic";
 
 export function GameDetails({ game }: { game: Game }) {
   const { data } = usePersonalData();
   const review = data.reviews.find((review) => review.gameId === game.id);
+  const critics = metacriticScores(game);
   return (
     <>
       <section className="detail-backdrop" aria-label={`${game.title} artwork`}>
@@ -21,7 +27,11 @@ export function GameDetails({ game }: { game: Game }) {
           priority
         />
         <div className="detail-backdrop-shade" />
-        <span className="badge">Local demo catalog · Steam edition</span>
+        <span className="badge">
+          {game.source.name.startsWith("RAWG")
+            ? "Game data via RAWG"
+            : "Local demo catalog · Steam edition"}
+        </span>
       </section>
       <div className="game-details detail-with-backdrop">
         <div className="detail-cover">
@@ -30,7 +40,9 @@ export function GameDetails({ game }: { game: Game }) {
             title={game.title}
             coverUrl={game.coverUrl}
           />
-          <p>Promotional artwork via Steam</p>
+          <p>
+            Artwork via {game.source.name.startsWith("RAWG") ? "RAWG" : "Steam"}
+          </p>
         </div>
         <div className="game-detail-copy">
           <p className="eyebrow">
@@ -38,6 +50,12 @@ export function GameDetails({ game }: { game: Game }) {
             {game.developer ?? "Developer unavailable"}
           </p>
           <h1>{game.title}</h1>
+          {game.availability === "snapshot" && (
+            <p className="storage-notice" role="status">
+              Showing saved metadata. Live RAWG details are unavailable; your
+              personal records are still editable.
+            </p>
+          )}
           <div className="tag-list">
             {game.genres.length ? (
               game.genres.map((genre) => <span key={genre}>{genre}</span>)
@@ -72,17 +90,23 @@ export function GameDetails({ game }: { game: Game }) {
           </dl>
           <div className="rating-strip">
             <div>
-              {game.metacritic ? (
-                <ExternalLink href={game.metacritic.url}>
-                  <strong>
-                    {game.metacritic.score}
-                    <small>/100</small>
-                  </strong>
-                  <span>
-                    Metacritic · {game.metacritic.platform}{" "}
-                    <ArrowUpRight size={12} />
-                  </span>
-                </ExternalLink>
+              {critics.length ? (
+                critics.map((critic, index) => (
+                  <ExternalLink
+                    key={`${critic.platformId ?? critic.platform ?? "unspecified"}:${index}`}
+                    href={critic.url}
+                    className="metacritic-score"
+                  >
+                    <strong>
+                      {critic.score}
+                      <small>/100</small>
+                    </strong>
+                    <span>
+                      Metacritic · {metacriticPlatformLabel(critic)}{" "}
+                      <ArrowUpRight size={12} />
+                    </span>
+                  </ExternalLink>
+                ))
               ) : (
                 <>
                   <strong className="rating-unavailable">—</strong>
@@ -98,6 +122,7 @@ export function GameDetails({ game }: { game: Game }) {
                     <small>/5</small>
                   </strong>
                   <span>
+                    {game.providerIds?.rawg ? "RAWG · " : ""}
                     {game.communityRating.count.toLocaleString()} community
                     ratings
                   </span>
@@ -157,7 +182,14 @@ export function GameDetails({ game }: { game: Game }) {
           </div>
           <span className="sample-note">Open an image for full size ↗</span>
         </div>
-        {game.screenshots.length ? (
+        {game.providerIds?.rawg &&
+        game.source.name.startsWith("RAWG") &&
+        !game.screenshots.length ? (
+          <RemoteScreenshots
+            key={game.id}
+            id={`rawg:${game.providerIds.rawg}`}
+          />
+        ) : game.screenshots.length ? (
           <div className="screenshot-grid">
             {game.screenshots.map((screenshot, index) => (
               <ExternalLink
@@ -191,7 +223,9 @@ export function GameDetails({ game }: { game: Game }) {
             )}
           </div>
           <p className="sample-note">
-            Tags are editorial descriptors for this demo catalog.
+            {game.source.name === "RAWG"
+              ? "Tags supplied by RAWG."
+              : "Tags are editorial descriptors for this demo catalog."}
           </p>
         </div>
         <div>

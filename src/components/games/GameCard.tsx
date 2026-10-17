@@ -3,18 +3,26 @@ import { Link } from "react-router";
 import type { Game } from "../../types";
 import { GameArtwork } from "./GameArtwork";
 import { getReleaseYear } from "../../lib/discovery";
+import {
+  metacriticScores,
+  metacriticPlatformLabel,
+} from "../../lib/metacritic";
 
 export function GameCard({ game }: { game: Game }) {
+  const critic = metacriticScores(game)[0];
   return (
-    <Link className="game-card group" to={`/games/${game.id}`}>
+    <Link
+      className="game-card group"
+      to={`/games/${game.source.name === "RAWG" && game.providerIds?.rawg ? `rawg:${game.providerIds.rawg}` : game.id}`}
+    >
       <div className="game-card-cover">
         <GameArtwork id={game.id} title={game.title} coverUrl={game.coverUrl} />
-        {game.metacritic && (
+        {critic && (
           <span
             className="critic-badge"
-            aria-label={`Metacritic ${game.metacritic.score} out of 100, ${game.metacritic.platform}`}
+            aria-label={`Metacritic ${critic.score} out of 100, ${metacriticPlatformLabel(critic)}`}
           >
-            MC <strong>{game.metacritic.score}</strong>
+            MC <strong>{critic.score}</strong>
           </span>
         )}
       </div>
@@ -29,6 +37,11 @@ export function GameCard({ game }: { game: Game }) {
             <span>·</span> {game.genres[0]}
           </>
         )}
+      </p>
+      <p className="card-score-context">
+        {critic
+          ? `Metacritic · ${metacriticPlatformLabel(critic)}`
+          : "Metacritic unavailable"}
       </p>
     </Link>
   );

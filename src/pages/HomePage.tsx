@@ -8,6 +8,7 @@ import {
 import { Link } from "react-router";
 import landscape from "../assets/landscape.svg";
 import { HomeCollections } from "../components/games/HomeCollections";
+import { GenreDiscovery } from "../components/games/GenreDiscovery";
 
 export function HomePage() {
   return (
@@ -15,7 +16,7 @@ export function HomePage() {
       <div className="home-topline">
         <span>A HOME FOR THE GAMES YOU PLAY</span>
         <span className="preview-label">
-          <i /> Local demo catalog
+          <i /> Curated picks · RAWG discovery
         </span>
       </div>
       <section className="hero">
@@ -45,6 +46,7 @@ export function HomePage() {
         </div>
       </section>
       <HomeCollections />
+      <GenreDiscovery />
       <section className="manifesto">
         <div>
           <p className="eyebrow">MORE THAN A BACKLOG</p>
