@@ -105,8 +105,8 @@ export function createRawgClient(
             body = await response.json();
           } catch {
             throw new GameApiError(
-              "Game proxy unavailable. Use Netlify Dev for live data.",
-              response.status || 502,
+              "The RAWG proxy did not return JSON. Use Netlify Dev locally, or redeploy the application with its Netlify Functions.",
+              502,
             );
           }
           if (!response.ok) {

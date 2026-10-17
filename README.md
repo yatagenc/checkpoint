@@ -79,14 +79,22 @@ The Phase 5A corruption protection, optimistic revision comparison and draft-pre
 
 `netlify/functions/rawg.ts` handles `GET /.netlify/functions/rawg`; `server/rawg-proxy.ts` validates requests and normalizes responses. The gateway supports game lists, details, screenshots and bounded genre metadata. It rejects arbitrary URLs/paths, unknown or repeated parameters, malformed IDs, unbounded pages and excessive page sizes. It uses a fixed official origin, refuses redirects, times out after 8 seconds, limits response size and returns sanitized errors. Upstream next URLs and credential-bearing error bodies never reach the browser. Function configuration includes an IP-based 60-request/minute limit; monitor provider/hosting quotas before production use.
 
-`netlify.toml` declares `npm run build`, output `dist`, the Functions directory and an SPA fallback. For a future deployment:
+`netlify.toml` declares `npm run build`, output `dist`, the Functions directory and an SPA fallback. For a complete deployment:
 
-1. Connect this repository to a Netlify project when deployment is authorized.
+1. Connect the existing Netlify project to this repository and deploy a revision containing the RAWG integration.
 2. Set `RAWG_API_KEY` in Netlify environment variables with **Functions** scope for the intended deploy context. Never add it to `netlify.toml` or build-time `VITE_*` configuration.
 3. Build/deploy through Netlify so Functions are packaged with the frontend; uploading `dist` alone does not deploy the proxy.
 4. Verify the function, nested-route refreshes, attribution, environment scopes and applicable quotas.
 
-**No deployment has been performed.** Full API design, endpoints, test evidence and limitations are in [Phase 5B report](docs/phase-5b-rawg.md) and [integration reference](docs/rawg-integration.md).
+Check a deployed release without making RAWG requests:
+
+```sh
+npm run verify:deployment -- https://checkpointv1.netlify.app
+# After the deployment checks pass, allow at most three targeted RAWG requests:
+npm run verify:deployment -- https://checkpointv1.netlify.app --live
+```
+
+The verifier checks function JSON routing, the live frontend client and nested SPA routes. The optional live check searches Animal Well, opens one result and checks page two when available. It never downloads the catalog or sends credentials from this machine. A failed check exits nonzero. See the [production debugging report](docs/production-rawg-debug.md) for confirmed deployment findings, redeployment instructions and remaining manual checks. No redeployment was performed during that audit. Full API design, endpoints, test evidence and limitations are in [Phase 5B report](docs/phase-5b-rawg.md) and [integration reference](docs/rawg-integration.md).
 
 ## Data and attribution
 

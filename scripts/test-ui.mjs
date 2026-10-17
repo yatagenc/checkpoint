@@ -1600,6 +1600,59 @@ test("discovery and routes work through React event handlers", async (t) => {
         }
       },
     );
+    await t.test(
+      "production HTML errors show a deployment problem without silently selecting the demo or erasing records",
+      async () => {
+        const original = globalThis.fetch;
+        const beforePersonal = dom.window.localStorage.getItem(
+          "checkpoint:v1:personal-data",
+        );
+        const beforeJournals = dom.window.localStorage.getItem(
+          "checkpoint:v1:journals",
+        );
+        globalThis.fetch = async () =>
+          new Response("<html>Function not deployed</html>", {
+            status: 404,
+            headers: { "Content-Type": "text/html" },
+          });
+        try {
+          await render("/games/rawg:700989", true);
+          assert.match(
+            query("main [role=alert]").textContent,
+            /redeploy.*Netlify Functions/,
+          );
+          assert.ok(
+            !query("main").textContent.includes("isn’t in our collection"),
+          );
+          await render("/explore?q=ProductionMissingProxyFixture", true);
+          await act(async () => {
+            await new Promise((resolve) => setTimeout(resolve, 450));
+          });
+          assert.match(
+            query("main [role=alert]").textContent,
+            /Netlify Functions/,
+          );
+          assert.equal(cardIds().length, 0);
+          assert.match(
+            query(".catalog-context").textContent,
+            /Powered by RAWG/,
+          );
+          await click('main a[href="/explore?source=demo"]');
+          assert.equal(cardIds().length, 36);
+          assert.match(query(".catalog-context").textContent, /Local demo/);
+          assert.equal(
+            dom.window.localStorage.getItem("checkpoint:v1:personal-data"),
+            beforePersonal,
+          );
+          assert.equal(
+            dom.window.localStorage.getItem("checkpoint:v1:journals"),
+            beforeJournals,
+          );
+        } finally {
+          globalThis.fetch = original;
+        }
+      },
+    );
   } finally {
     globalThis.fetch = nativeFetch;
     if (root) await act(async () => root.unmount());

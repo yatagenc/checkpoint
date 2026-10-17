@@ -291,6 +291,30 @@ test("old and remote identities share service and personal transitions without r
   assert.equal((await offline.getGame("rawg:123"))?.availability, "snapshot");
 });
 
+test("missing function HTML and SPA rewrites never become game-not-found or local search results", async () => {
+  for (const status of [200, 404]) {
+    const client = createRawgClient(
+      async () =>
+        new Response("<html>Static deployment</html>", {
+          status,
+          headers: { "Content-Type": "text/html" },
+        }),
+    );
+    await assert.rejects(
+      client.getGame("rawg:783856"),
+      (error) =>
+        error instanceof Error &&
+        "status" in error &&
+        error.status === 502 &&
+        /Netlify Functions/.test(error.message),
+    );
+    await assert.rejects(
+      client.search(new URLSearchParams("q=Animal Well")),
+      /redeploy/,
+    );
+  }
+});
+
 test("bounded cache evicts old searches and malformed responses can be retried", async () => {
   let calls = 0;
   let malformed = true;

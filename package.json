@@ -9,7 +9,8 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "test": "node --experimental-strip-types --test src/lib/*.test.ts && node --test scripts/test-ui.mjs scripts/dev-server.test.mjs",
+    "test": "node --experimental-strip-types --test src/lib/*.test.ts && node --test scripts/test-ui.mjs scripts/dev-server.test.mjs scripts/production-routing.test.mjs",
+    "verify:deployment": "node scripts/verify-deployment.mjs",
     "typecheck": "tsc -b",
     "refresh:catalog": "node scripts/refresh-catalog.mjs",
     "dev:netlify": "node --env-file-if-exists=.env.local scripts/netlify-dev.mjs"
