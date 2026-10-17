@@ -2,6 +2,7 @@ import { Outlet } from "react-router";
 import { useRouteAccessibility } from "../../hooks/useRouteAccessibility";
 import { Header } from "./Header";
 import { Footer } from "./Footer";
+import { StorageNotice } from "../personal/StorageNotice";
 
 export function AppLayout() {
   const mainRef = useRouteAccessibility();
@@ -17,6 +18,7 @@ export function AppLayout() {
         ref={mainRef}
         className="container main-content"
       >
+        <StorageNotice />
         <Outlet />
       </main>
       <Footer />

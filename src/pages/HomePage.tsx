@@ -7,9 +7,7 @@ import {
 } from "lucide-react";
 import { Link } from "react-router";
 import landscape from "../assets/landscape.svg";
-import { games } from "../data/games";
-import { GameCard } from "../components/games/GameCard";
-import { SectionHeading } from "../components/ui/SectionHeading";
+import { HomeCollections } from "../components/games/HomeCollections";
 
 export function HomePage() {
   return (
@@ -17,7 +15,7 @@ export function HomePage() {
       <div className="home-topline">
         <span>A HOME FOR THE GAMES YOU PLAY</span>
         <span className="preview-label">
-          <i /> Phase 01 preview
+          <i /> Local demo catalog
         </span>
       </div>
       <section className="hero">
@@ -46,24 +44,7 @@ export function HomePage() {
           </Link>
         </div>
       </section>
-      <section className="section">
-        <SectionHeading
-          eyebrow="YOUR NEXT CHAPTER"
-          title="Worlds worth getting lost in"
-        >
-          <Link className="text-link" to="/explore">
-            Explore games <ArrowRight size={16} />
-          </Link>
-        </SectionHeading>
-        <p className="sample-note">
-          Sample collection · Original artwork placeholders
-        </p>
-        <div className="game-grid">
-          {games.map((game) => (
-            <GameCard key={game.id} game={game} />
-          ))}
-        </div>
-      </section>
+      <HomeCollections />
       <section className="manifesto">
         <div>
           <p className="eyebrow">MORE THAN A BACKLOG</p>

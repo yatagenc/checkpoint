@@ -10,7 +10,7 @@ export function NotFoundPage({ game = false }: { game?: boolean }) {
       </h1>
       <p>
         {game
-          ? "The preview catalog is small. Discover one of the sample games to continue."
+          ? "This game is not in the local demo catalog. Explore the collection to continue."
           : "This page doesn’t exist. Let’s get you back to familiar ground."}
       </p>
       <Link className="button button-primary" to={game ? "/explore" : "/"}>

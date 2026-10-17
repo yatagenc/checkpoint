@@ -20,6 +20,37 @@ function memoryStorage(): Storage {
   };
 }
 const isString = (value: unknown): value is string => typeof value === "string";
+test("snapshots distinguish damaged data and guarded writes preserve newer revisions", () => {
+  const target = memoryStorage();
+  const store = createStorage(() => target);
+  assert.equal(store.snapshot("note", isString).result.status, "missing");
+  const first = store.writeIfUnchanged("note", "first", null);
+  assert.equal(first.ok, true);
+  const snapshot = store.snapshot("note", isString);
+  assert.equal(snapshot.result.status, "ready");
+  store.write("note", "newer");
+  const newer = target.getItem("checkpoint:v1:note");
+  assert.deepEqual(store.writeIfUnchanged("note", "stale", snapshot.raw), {
+    ok: false,
+    reason: "conflict",
+  });
+  assert.equal(target.getItem("checkpoint:v1:note"), newer);
+  target.setItem("checkpoint:v1:note", "{broken");
+  assert.equal(store.snapshot("note", isString).result.status, "invalid");
+  assert.equal(target.getItem("checkpoint:v1:note"), "{broken");
+  assert.deepEqual(store.writeIfUnchanged("note", "stale", newer), {
+    ok: false,
+    reason: "conflict",
+  });
+  assert.equal(
+    createStorage(() => undefined).snapshot("note", isString).result.status,
+    "unavailable",
+  );
+  assert.deepEqual(
+    createStorage(() => undefined).writeIfUnchanged("note", "x", null),
+    { ok: false, reason: "unavailable" },
+  );
+});
 test("round trips, namespaces keys and removes only its own key", () => {
   const target = memoryStorage();
   const store = createStorage(() => target);

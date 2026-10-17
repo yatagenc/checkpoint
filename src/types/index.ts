@@ -10,16 +10,35 @@ export interface GamePlatform {
   abbreviation: string;
 }
 export interface Game {
+  /** Optional provider mappings never replace the canonical persisted id. */
+  providerIds?: Partial<Record<GameProvider, string>>;
   id: string;
   title: string;
   slug: string;
-  releaseDate: string;
-  developer: string;
+  releaseDate: string | null;
+  releaseDateNote: string;
+  developer: string | null;
+  publisher: string | null;
   genres: string[];
   platforms: GamePlatform[];
-  summary: string;
-  coverUrl?: string;
+  description: string | null;
+  coverUrl: string | null;
+  backgroundUrl: string | null;
+  tags: string[];
+  screenshots: { url: string; alt: string }[];
+  metacritic: { score: number; url: string; platform: string } | null;
+  communityRating: { value: number; count: number; url: string } | null;
+  estimatedPlaytimeHours: number | null;
+  externalLinks: { label: string; url: string }[];
+  source: {
+    name: string;
+    url: string;
+    verifiedAt: string;
+    note: string;
+    platformSources: { name: string; url: string }[];
+  };
 }
+export type GameProvider = "steam" | "rawg";
 export interface LibraryEntry {
   id: string;
   userId: string;
@@ -32,31 +51,56 @@ export interface LibraryEntry {
   updatedAt: string;
   startedAt?: string;
   completedAt?: string;
+  playtimeHours?: number;
+  notes?: string;
+  /** Rank records favorite order; absent means not a favorite. */
+  favoriteOrder?: number;
 }
 export interface Review {
   id: string;
   userId: string;
   gameId: string;
-  rating: Rating;
+  rating?: Rating;
+  title?: string;
   text: string;
   containsSpoilers: boolean;
   visibility: Visibility;
   createdAt: string;
   updatedAt: string;
 }
-export interface PlaythroughEntry {
+export type PlaythroughStatus =
+  "in-progress" | "completed" | "paused" | "abandoned";
+export type JournalEntryType =
+  "chapter" | "mission" | "milestone" | "general-update";
+export interface Playthrough {
   id: string;
-  userId: string;
   gameId: string;
-  playthroughId: string;
-  chapterLabel: string;
-  occurredAt: string;
+  title: string;
+  playthroughNumber: number;
+  startedAt: string;
+  completedAt?: string;
+  status: PlaythroughStatus;
+  platform?: string;
+  difficulty?: string;
+  notes?: string;
   createdAt: string;
   updatedAt: string;
-  notes: string;
+}
+export interface PlaythroughEntry {
+  id: string;
+  playthroughId: string;
+  title: string;
+  type: JournalEntryType;
+  chapterLabel?: string;
+  progressPercent?: number;
+  playtimeHours?: number;
+  content: string;
+  provisionalRating?: Rating;
+  entryDate: string;
+  createdAt: string;
+  updatedAt: string;
   containsSpoilers: boolean;
   visibility: Visibility;
-  minutesPlayed?: number;
 }
 export interface UserProfile {
   id: string;

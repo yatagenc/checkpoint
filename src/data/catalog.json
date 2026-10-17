@@ -1,0 +1,2144 @@
+[
+  {
+    "id": "elden-ring",
+    "slug": "elden-ring",
+    "title": "ELDEN RING",
+    "coverUrl": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1245620/library_600x900.jpg",
+    "backgroundUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1245620/ss_943bf6fe62352757d9070c1d33e50b92fe8539f1.1920x1080.jpg?t=1790290043",
+    "description": "Explore a fallen kingdom, build your own fighting style, and follow curiosity across the Lands Between.",
+    "releaseDate": "2022-02-24",
+    "releaseDateNote": "Steam edition release",
+    "developer": "FromSoftware, Inc.",
+    "publisher": "FromSoftware, Inc., Bandai Namco Entertainment",
+    "platforms": [
+      {
+        "id": "pc",
+        "name": "PC (Windows)",
+        "abbreviation": "PC"
+      }
+    ],
+    "genres": ["Action", "RPG"],
+    "tags": ["Open world", "Fantasy", "Challenging"],
+    "screenshots": [
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1245620/ss_943bf6fe62352757d9070c1d33e50b92fe8539f1.1920x1080.jpg?t=1790290043",
+        "alt": "ELDEN RING — promotional screenshot 1"
+      },
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1245620/ss_dcdac9e4b26ac0ee5248bfd2967d764fd00cdb42.1920x1080.jpg?t=1790290043",
+        "alt": "ELDEN RING — promotional screenshot 2"
+      },
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1245620/ss_3c41384a24d86dddd58a8f61db77f9dc0bfda8b5.1920x1080.jpg?t=1790290043",
+        "alt": "ELDEN RING — promotional screenshot 3"
+      }
+    ],
+    "metacritic": {
+      "score": 94,
+      "url": "https://www.metacritic.com/game/pc/elden-ring?ftag=MCD-06-10aaa1f",
+      "platform": "PC"
+    },
+    "communityRating": null,
+    "estimatedPlaytimeHours": null,
+    "externalLinks": [
+      {
+        "label": "Steam store",
+        "url": "https://store.steampowered.com/app/1245620/"
+      }
+    ],
+    "source": {
+      "name": "Steam store",
+      "url": "https://store.steampowered.com/app/1245620/",
+      "verifiedAt": "2026-10-16",
+      "note": "Local demo snapshot. Dates, platforms and critic scores refer to the Steam/PC edition; tags and descriptions are Checkpoint editorial copy."
+    }
+  },
+  {
+    "id": "red-dead-redemption-2",
+    "slug": "red-dead-redemption-2",
+    "title": "Red Dead Redemption 2",
+    "coverUrl": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1174180/library_600x900.jpg",
+    "backgroundUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1174180/ss_66b553f4c209476d3e4ce25fa4714002cc914c4f.1920x1080.jpg?t=1759502961",
+    "description": "Ride with an outlaw gang as the American frontier changes around them. A sprawling western shaped by loyalty, survival, and the cost of a fading way of life.",
+    "releaseDate": "2019-12-05",
+    "releaseDateNote": "Steam edition release",
+    "developer": "Rockstar Games",
+    "publisher": "Rockstar Games",
+    "platforms": [
+      {
+        "id": "pc",
+        "name": "PC (Windows)",
+        "abbreviation": "PC"
+      }
+    ],
+    "genres": ["Action", "Adventure"],
+    "tags": ["Open world", "Western", "Story rich"],
+    "screenshots": [
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1174180/ss_66b553f4c209476d3e4ce25fa4714002cc914c4f.1920x1080.jpg?t=1759502961",
+        "alt": "Red Dead Redemption 2 — promotional screenshot 1"
+      },
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1174180/ss_bac60bacbf5da8945103648c08d27d5e202444ca.1920x1080.jpg?t=1759502961",
+        "alt": "Red Dead Redemption 2 — promotional screenshot 2"
+      },
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1174180/ss_668dafe477743f8b50b818d5bbfcec669e9ba93e.1920x1080.jpg?t=1759502961",
+        "alt": "Red Dead Redemption 2 — promotional screenshot 3"
+      }
+    ],
+    "metacritic": {
+      "score": 93,
+      "url": "https://www.metacritic.com/game/pc/red-dead-redemption-2?ftag=MCD-06-10aaa1f",
+      "platform": "PC"
+    },
+    "communityRating": null,
+    "estimatedPlaytimeHours": null,
+    "externalLinks": [
+      {
+        "label": "Steam store",
+        "url": "https://store.steampowered.com/app/1174180/"
+      },
+      {
+        "label": "Official website",
+        "url": "https://www.rockstargames.com/reddeadredemption2/"
+      }
+    ],
+    "source": {
+      "name": "Steam store",
+      "url": "https://store.steampowered.com/app/1174180/",
+      "verifiedAt": "2026-10-16",
+      "note": "Local demo snapshot. Dates, platforms and critic scores refer to the Steam/PC edition; tags and descriptions are Checkpoint editorial copy."
+    }
+  },
+  {
+    "id": "the-witcher-3",
+    "slug": "the-witcher-3",
+    "title": "The Witcher 3: Wild Hunt — Remastered",
+    "coverUrl": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/292030/library_600x900.jpg",
+    "backgroundUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/292030/f7f564ecedd09b3e503b071a637aeefdedbeedd8/ss_f7f564ecedd09b3e503b071a637aeefdedbeedd8.1920x1080.jpg?t=1790845156",
+    "description": "Follow Geralt of Rivia through war-torn landscapes in search of someone close to him. Monster contracts and difficult choices fill the roads between villages.",
+    "releaseDate": "2015-05-18",
+    "releaseDateNote": "Steam edition release",
+    "developer": "CD PROJEKT RED",
+    "publisher": "CD PROJEKT RED",
+    "platforms": [
+      {
+        "id": "pc",
+        "name": "PC (Windows)",
+        "abbreviation": "PC"
+      }
+    ],
+    "genres": ["RPG"],
+    "tags": ["Open world", "Fantasy", "Story rich"],
+    "screenshots": [
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/292030/f7f564ecedd09b3e503b071a637aeefdedbeedd8/ss_f7f564ecedd09b3e503b071a637aeefdedbeedd8.1920x1080.jpg?t=1790845156",
+        "alt": "The Witcher 3: Wild Hunt — Remastered — promotional screenshot 1"
+      },
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/292030/0a38e4d0d57f15934772dbe09b322d08132d5518/ss_0a38e4d0d57f15934772dbe09b322d08132d5518.1920x1080.jpg?t=1790845156",
+        "alt": "The Witcher 3: Wild Hunt — Remastered — promotional screenshot 2"
+      },
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/292030/19c03c2b997d3a393fc629fd42f55ddb4a3d8dd0/ss_19c03c2b997d3a393fc629fd42f55ddb4a3d8dd0.1920x1080.jpg?t=1790845156",
+        "alt": "The Witcher 3: Wild Hunt — Remastered — promotional screenshot 3"
+      }
+    ],
+    "metacritic": {
+      "score": 93,
+      "url": "https://www.metacritic.com/game/pc/the-witcher-3-wild-hunt?ftag=MCD-06-10aaa1f",
+      "platform": "PC"
+    },
+    "communityRating": null,
+    "estimatedPlaytimeHours": null,
+    "externalLinks": [
+      {
+        "label": "Steam store",
+        "url": "https://store.steampowered.com/app/292030/"
+      },
+      {
+        "label": "Official website",
+        "url": "https://www.thewitcher.com/witcher3"
+      }
+    ],
+    "source": {
+      "name": "Steam store",
+      "url": "https://store.steampowered.com/app/292030/",
+      "verifiedAt": "2026-10-16",
+      "note": "Local demo snapshot. Dates, platforms and critic scores refer to the Steam/PC edition; tags and descriptions are Checkpoint editorial copy."
+    }
+  },
+  {
+    "id": "cyberpunk-2077",
+    "slug": "cyberpunk-2077",
+    "title": "Cyberpunk 2077",
+    "coverUrl": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1091500/library_600x900.jpg",
+    "backgroundUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1091500/ss_2f649b68d579bf87011487d29bc4ccbfdd97d34f.1920x1080.jpg?t=1784714077",
+    "description": "Find your place in Night City as a mercenary caught in a struggle over identity and power. Shape your approach with cyberware, conversation, stealth, and combat.",
+    "releaseDate": "2020-12-09",
+    "releaseDateNote": "Steam edition release",
+    "developer": "CD PROJEKT RED",
+    "publisher": "CD PROJEKT RED",
+    "platforms": [
+      {
+        "id": "pc",
+        "name": "PC (Windows)",
+        "abbreviation": "PC"
+      },
+      {
+        "id": "mac",
+        "name": "macOS",
+        "abbreviation": "Mac"
+      }
+    ],
+    "genres": ["RPG"],
+    "tags": ["Open world", "Sci-fi", "Story rich"],
+    "screenshots": [
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1091500/ss_2f649b68d579bf87011487d29bc4ccbfdd97d34f.1920x1080.jpg?t=1784714077",
+        "alt": "Cyberpunk 2077 — promotional screenshot 1"
+      },
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1091500/ss_0e64170751e1ae20ff8fdb7001a8892fd48260e7.1920x1080.jpg?t=1784714077",
+        "alt": "Cyberpunk 2077 — promotional screenshot 2"
+      },
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1091500/ss_af2804aa4bf35d4251043744412ce3b359a125ef.1920x1080.jpg?t=1784714077",
+        "alt": "Cyberpunk 2077 — promotional screenshot 3"
+      }
+    ],
+    "metacritic": {
+      "score": 86,
+      "url": "https://www.metacritic.com/game/pc/cyberpunk-2077?ftag=MCD-06-10aaa1f",
+      "platform": "PC"
+    },
+    "communityRating": null,
+    "estimatedPlaytimeHours": null,
+    "externalLinks": [
+      {
+        "label": "Steam store",
+        "url": "https://store.steampowered.com/app/1091500/"
+      },
+      {
+        "label": "Official website",
+        "url": "https://www.cyberpunk.net"
+      }
+    ],
+    "source": {
+      "name": "Steam store",
+      "url": "https://store.steampowered.com/app/1091500/",
+      "verifiedAt": "2026-10-16",
+      "note": "Local demo snapshot. Dates, platforms and critic scores refer to the Steam/PC edition; tags and descriptions are Checkpoint editorial copy."
+    }
+  },
+  {
+    "id": "baldurs-gate-3",
+    "slug": "baldurs-gate-3",
+    "title": "Baldur's Gate 3",
+    "coverUrl": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1086940/library_600x900.jpg",
+    "backgroundUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1086940/ss_c73bc54415178c07fef85f54ee26621728c77504.1920x1080.jpg?t=1777363040",
+    "description": "Gather a party and navigate a fantasy adventure built around choice. Turn-based encounters and branching conversations leave room for unexpected solutions.",
+    "releaseDate": "2023-08-03",
+    "releaseDateNote": "Steam edition release",
+    "developer": "Larian Studios",
+    "publisher": "Larian Studios",
+    "platforms": [
+      {
+        "id": "pc",
+        "name": "PC (Windows)",
+        "abbreviation": "PC"
+      },
+      {
+        "id": "mac",
+        "name": "macOS",
+        "abbreviation": "Mac"
+      }
+    ],
+    "genres": ["Adventure", "RPG", "Strategy"],
+    "tags": ["Fantasy", "Turn-based", "Party based"],
+    "screenshots": [
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1086940/ss_c73bc54415178c07fef85f54ee26621728c77504.1920x1080.jpg?t=1777363040",
+        "alt": "Baldur's Gate 3 — promotional screenshot 1"
+      },
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1086940/ss_73d93bea842b93914d966622104dcb8c0f42972b.1920x1080.jpg?t=1777363040",
+        "alt": "Baldur's Gate 3 — promotional screenshot 2"
+      },
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1086940/ss_cf936d31061b58e98e0c646aee00e6030c410cda.1920x1080.jpg?t=1777363040",
+        "alt": "Baldur's Gate 3 — promotional screenshot 3"
+      }
+    ],
+    "metacritic": {
+      "score": 96,
+      "url": "https://www.metacritic.com/game/pc/baldurs-gate-3?ftag=MCD-06-10aaa1f",
+      "platform": "PC"
+    },
+    "communityRating": null,
+    "estimatedPlaytimeHours": null,
+    "externalLinks": [
+      {
+        "label": "Steam store",
+        "url": "https://store.steampowered.com/app/1086940/"
+      },
+      {
+        "label": "Official website",
+        "url": "https://baldursgate3.game"
+      }
+    ],
+    "source": {
+      "name": "Steam store",
+      "url": "https://store.steampowered.com/app/1086940/",
+      "verifiedAt": "2026-10-16",
+      "note": "Local demo snapshot. Dates, platforms and critic scores refer to the Steam/PC edition; tags and descriptions are Checkpoint editorial copy."
+    }
+  },
+  {
+    "id": "god-of-war",
+    "slug": "god-of-war",
+    "title": "God of War",
+    "coverUrl": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1593500/library_600x900.jpg",
+    "backgroundUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1593500/ss_6eccc970b5de2943546d93d319be1b5c0618f21b.1920x1080.jpg?t=1763059412",
+    "description": "Travel through a world of Norse myth with Kratos and his son Atreus. A personal journey unfolds through exploration and close-quarters combat.",
+    "releaseDate": "2022-01-14",
+    "releaseDateNote": "Steam edition release",
+    "developer": "Santa Monica Studio, Jetpack Interactive",
+    "publisher": "PlayStation Publishing LLC",
+    "platforms": [
+      {
+        "id": "pc",
+        "name": "PC (Windows)",
+        "abbreviation": "PC"
+      }
+    ],
+    "genres": ["Action", "Adventure", "RPG"],
+    "tags": ["Mythology", "Story rich", "Third person"],
+    "screenshots": [
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1593500/ss_6eccc970b5de2943546d93d319be1b5c0618f21b.1920x1080.jpg?t=1763059412",
+        "alt": "God of War — promotional screenshot 1"
+      },
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1593500/ss_f1bff24d3967a21d303d95e11ed892e3d9113057.1920x1080.jpg?t=1763059412",
+        "alt": "God of War — promotional screenshot 2"
+      },
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1593500/ss_3670ba72c7e3e9c3c3225547ef2c1053504e62b8.1920x1080.jpg?t=1763059412",
+        "alt": "God of War — promotional screenshot 3"
+      }
+    ],
+    "metacritic": {
+      "score": 93,
+      "url": "https://www.metacritic.com/game/pc/god-of-war?ftag=MCD-06-10aaa1f",
+      "platform": "PC"
+    },
+    "communityRating": null,
+    "estimatedPlaytimeHours": null,
+    "externalLinks": [
+      {
+        "label": "Steam store",
+        "url": "https://store.steampowered.com/app/1593500/"
+      },
+      {
+        "label": "Official website",
+        "url": "https://www.playstation.com/god-of-war/"
+      }
+    ],
+    "source": {
+      "name": "Steam store",
+      "url": "https://store.steampowered.com/app/1593500/",
+      "verifiedAt": "2026-10-16",
+      "note": "Local demo snapshot. Dates, platforms and critic scores refer to the Steam/PC edition; tags and descriptions are Checkpoint editorial copy."
+    }
+  },
+  {
+    "id": "the-last-of-us",
+    "slug": "the-last-of-us",
+    "title": "The Last of Us™ Part I",
+    "coverUrl": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1888930/library_600x900.jpg",
+    "backgroundUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1888930/ss_3f1805ecddafacee7f61f87cb8e4624435a83ee3.1920x1080.jpg?t=1750959031",
+    "description": "Journey across a changed United States with Joel and Ellie. Explore abandoned places and navigate tense encounters in a story of survival and human connection.",
+    "releaseDate": "2023-03-28",
+    "releaseDateNote": "Steam edition release",
+    "developer": "Naughty Dog LLC, Iron Galaxy Studios",
+    "publisher": "PlayStation Publishing LLC",
+    "platforms": [
+      {
+        "id": "pc",
+        "name": "PC (Windows)",
+        "abbreviation": "PC"
+      }
+    ],
+    "genres": ["Action", "Adventure"],
+    "tags": ["Survival", "Story rich", "Post-apocalyptic"],
+    "screenshots": [
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1888930/ss_3f1805ecddafacee7f61f87cb8e4624435a83ee3.1920x1080.jpg?t=1750959031",
+        "alt": "The Last of Us™ Part I — promotional screenshot 1"
+      },
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1888930/ss_89fffc2857dcae29dee2a09f1be33d745610e19d.1920x1080.jpg?t=1750959031",
+        "alt": "The Last of Us™ Part I — promotional screenshot 2"
+      },
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1888930/ss_8cd55ab975b2e47f4d4d9a0da4ae6948040ef807.1920x1080.jpg?t=1750959031",
+        "alt": "The Last of Us™ Part I — promotional screenshot 3"
+      }
+    ],
+    "metacritic": null,
+    "communityRating": null,
+    "estimatedPlaytimeHours": null,
+    "externalLinks": [
+      {
+        "label": "Steam store",
+        "url": "https://store.steampowered.com/app/1888930/"
+      },
+      {
+        "label": "Official website",
+        "url": "https://www.playstation.com/games/the-last-of-us-part-i/pc/"
+      }
+    ],
+    "source": {
+      "name": "Steam store",
+      "url": "https://store.steampowered.com/app/1888930/",
+      "verifiedAt": "2026-10-16",
+      "note": "Local demo snapshot. Dates, platforms and critic scores refer to the Steam/PC edition; tags and descriptions are Checkpoint editorial copy."
+    }
+  },
+  {
+    "id": "hollow-knight",
+    "slug": "hollow-knight",
+    "title": "Hollow Knight",
+    "coverUrl": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/367520/library_600x900.jpg",
+    "backgroundUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/367520/ss_5384f9f8b96a0b9934b2bc35a4058376211636d2.1920x1080.jpg?t=1776125684",
+    "description": "Descend into a forgotten kingdom beneath a quiet town. Explore interwoven caverns, learn precise combat, and uncover the traces of a lost civilization.",
+    "releaseDate": "2017-02-24",
+    "releaseDateNote": "Steam edition release",
+    "developer": "Team Cherry",
+    "publisher": "Team Cherry",
+    "platforms": [
+      {
+        "id": "pc",
+        "name": "PC (Windows)",
+        "abbreviation": "PC"
+      },
+      {
+        "id": "mac",
+        "name": "macOS",
+        "abbreviation": "Mac"
+      },
+      {
+        "id": "linux",
+        "name": "Linux",
+        "abbreviation": "Linux"
+      }
+    ],
+    "genres": ["Action", "Adventure", "Indie"],
+    "tags": ["Metroidvania", "Exploration", "Challenging"],
+    "screenshots": [
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/367520/ss_5384f9f8b96a0b9934b2bc35a4058376211636d2.1920x1080.jpg?t=1776125684",
+        "alt": "Hollow Knight — promotional screenshot 1"
+      },
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/367520/ss_d5b6edd94e77ba6db31c44d8a3c09d807ab27751.1920x1080.jpg?t=1776125684",
+        "alt": "Hollow Knight — promotional screenshot 2"
+      },
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/367520/ss_a81e4231cc8d55f58b51a4a938898af46503cae5.1920x1080.jpg?t=1776125684",
+        "alt": "Hollow Knight — promotional screenshot 3"
+      }
+    ],
+    "metacritic": {
+      "score": 87,
+      "url": "https://www.metacritic.com/game/pc/hollow-knight?ftag=MCD-06-10aaa1f",
+      "platform": "PC"
+    },
+    "communityRating": null,
+    "estimatedPlaytimeHours": null,
+    "externalLinks": [
+      {
+        "label": "Steam store",
+        "url": "https://store.steampowered.com/app/367520/"
+      }
+    ],
+    "source": {
+      "name": "Steam store",
+      "url": "https://store.steampowered.com/app/367520/",
+      "verifiedAt": "2026-10-16",
+      "note": "Local demo snapshot. Dates, platforms and critic scores refer to the Steam/PC edition; tags and descriptions are Checkpoint editorial copy."
+    }
+  },
+  {
+    "id": "sekiro",
+    "slug": "sekiro",
+    "title": "Sekiro™: Shadows Die Twice - GOTY Edition",
+    "coverUrl": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/814380/library_600x900.jpg",
+    "backgroundUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/814380/ss_0f7b0f8ed9ffc49aba26f9328caa9a1d59ad60f0.1920x1080.jpg?t=1762888662",
+    "description": "Follow a shinobi through a fantastical vision of Sengoku-era Japan. Deflection, movement, and observation are central to its demanding sword fights.",
+    "releaseDate": "2019-03-21",
+    "releaseDateNote": "Steam edition release",
+    "developer": "FromSoftware, Inc.",
+    "publisher": "Activision (Excluding Japan and Asia), FromSoftware, Inc. (Japan), 方块游戏 (Asia)",
+    "platforms": [
+      {
+        "id": "pc",
+        "name": "PC (Windows)",
+        "abbreviation": "PC"
+      }
+    ],
+    "genres": ["Action", "Adventure"],
+    "tags": ["Challenging", "Ninja", "Third person"],
+    "screenshots": [
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/814380/ss_0f7b0f8ed9ffc49aba26f9328caa9a1d59ad60f0.1920x1080.jpg?t=1762888662",
+        "alt": "Sekiro™: Shadows Die Twice - GOTY Edition — promotional screenshot 1"
+      },
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/814380/ss_2685dd844a2a523b6c7ec207d46a538db6a908cd.1920x1080.jpg?t=1762888662",
+        "alt": "Sekiro™: Shadows Die Twice - GOTY Edition — promotional screenshot 2"
+      },
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/814380/ss_15f0e9982621aed44900215ad283811af0779b1d.1920x1080.jpg?t=1762888662",
+        "alt": "Sekiro™: Shadows Die Twice - GOTY Edition — promotional screenshot 3"
+      }
+    ],
+    "metacritic": {
+      "score": 88,
+      "url": "https://www.metacritic.com/game/pc/sekiro-shadows-die-twice?ftag=MCD-06-10aaa1f",
+      "platform": "PC"
+    },
+    "communityRating": null,
+    "estimatedPlaytimeHours": null,
+    "externalLinks": [
+      {
+        "label": "Steam store",
+        "url": "https://store.steampowered.com/app/814380/"
+      }
+    ],
+    "source": {
+      "name": "Steam store",
+      "url": "https://store.steampowered.com/app/814380/",
+      "verifiedAt": "2026-10-16",
+      "note": "Local demo snapshot. Dates, platforms and critic scores refer to the Steam/PC edition; tags and descriptions are Checkpoint editorial copy."
+    }
+  },
+  {
+    "id": "grand-theft-auto-v",
+    "slug": "grand-theft-auto-v",
+    "title": "Grand Theft Auto V Legacy",
+    "coverUrl": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/271590/library_600x900.jpg",
+    "backgroundUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/271590/ss_32aa18ab3175e3002217862dd5917646d298ab6b.1920x1080.jpg?t=1765387725",
+    "description": "Explore Los Santos through three intersecting criminal lives. A sprawling city and surrounding countryside form the stage for missions, driving, and heists.",
+    "releaseDate": "2015-04-13",
+    "releaseDateNote": "Steam edition release",
+    "developer": "Rockstar North",
+    "publisher": "Rockstar Games",
+    "platforms": [
+      {
+        "id": "pc",
+        "name": "PC (Windows)",
+        "abbreviation": "PC"
+      }
+    ],
+    "genres": ["Action", "Adventure"],
+    "tags": ["Open world", "Crime", "Third person"],
+    "screenshots": [
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/271590/ss_32aa18ab3175e3002217862dd5917646d298ab6b.1920x1080.jpg?t=1765387725",
+        "alt": "Grand Theft Auto V Legacy — promotional screenshot 1"
+      },
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/271590/ss_2744f112fa060320d191a50e8b3a92441a648a56.1920x1080.jpg?t=1765387725",
+        "alt": "Grand Theft Auto V Legacy — promotional screenshot 2"
+      },
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/271590/ss_da39c16db175f6973770bae6b91d411251763152.1920x1080.jpg?t=1765387725",
+        "alt": "Grand Theft Auto V Legacy — promotional screenshot 3"
+      }
+    ],
+    "metacritic": {
+      "score": 96,
+      "url": "https://www.metacritic.com/game/pc/grand-theft-auto-v?ftag=MCD-06-10aaa1f",
+      "platform": "PC"
+    },
+    "communityRating": null,
+    "estimatedPlaytimeHours": null,
+    "externalLinks": [
+      {
+        "label": "Steam store",
+        "url": "https://store.steampowered.com/app/271590/"
+      },
+      {
+        "label": "Official website",
+        "url": "https://www.rockstargames.com/V/"
+      }
+    ],
+    "source": {
+      "name": "Steam store",
+      "url": "https://store.steampowered.com/app/271590/",
+      "verifiedAt": "2026-10-16",
+      "note": "Local demo snapshot. Dates, platforms and critic scores refer to the Steam/PC edition; tags and descriptions are Checkpoint editorial copy."
+    }
+  },
+  {
+    "id": "hades",
+    "slug": "hades",
+    "title": "Hades",
+    "coverUrl": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1145360/library_600x900.jpg",
+    "backgroundUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1145360/ss_c0fed447426b69981cf1721756acf75369801b31.1920x1080.jpg?t=1758127023",
+    "description": "Attempt to escape the Greek underworld with help from the Olympian gods. Each run combines changing abilities with a story that continues between attempts.",
+    "releaseDate": "2020-09-17",
+    "releaseDateNote": "Steam edition release",
+    "developer": "Supergiant Games",
+    "publisher": "Supergiant Games",
+    "platforms": [
+      {
+        "id": "pc",
+        "name": "PC (Windows)",
+        "abbreviation": "PC"
+      },
+      {
+        "id": "mac",
+        "name": "macOS",
+        "abbreviation": "Mac"
+      }
+    ],
+    "genres": ["Action", "Indie", "RPG"],
+    "tags": ["Roguelike", "Mythology", "Isometric"],
+    "screenshots": [
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1145360/ss_c0fed447426b69981cf1721756acf75369801b31.1920x1080.jpg?t=1758127023",
+        "alt": "Hades — promotional screenshot 1"
+      },
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1145360/ss_8a9f0953e8a014bd3df2789c2835cb787cd3764d.1920x1080.jpg?t=1758127023",
+        "alt": "Hades — promotional screenshot 2"
+      },
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1145360/ss_68300459a8c3daacb2ec687adcdbf4442fcc4f47.1920x1080.jpg?t=1758127023",
+        "alt": "Hades — promotional screenshot 3"
+      }
+    ],
+    "metacritic": {
+      "score": 93,
+      "url": "https://www.metacritic.com/game/pc/hades?ftag=MCD-06-10aaa1f",
+      "platform": "PC"
+    },
+    "communityRating": null,
+    "estimatedPlaytimeHours": null,
+    "externalLinks": [
+      {
+        "label": "Steam store",
+        "url": "https://store.steampowered.com/app/1145360/"
+      }
+    ],
+    "source": {
+      "name": "Steam store",
+      "url": "https://store.steampowered.com/app/1145360/",
+      "verifiedAt": "2026-10-16",
+      "note": "Local demo snapshot. Dates, platforms and critic scores refer to the Steam/PC edition; tags and descriptions are Checkpoint editorial copy."
+    }
+  },
+  {
+    "id": "resident-evil-4",
+    "slug": "resident-evil-4",
+    "title": "Resident Evil 4",
+    "coverUrl": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2050650/library_600x900.jpg",
+    "backgroundUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2050650/ss_59d1b19964cc532213df92c8287b75a0bffeb33c.1920x1080.jpg?t=1772502922",
+    "description": "Enter a remote European village on a rescue mission as Leon Kennedy. This remake reworks the original survival horror adventure with modern combat and exploration.",
+    "releaseDate": "2023-03-23",
+    "releaseDateNote": "Steam edition release",
+    "developer": "CAPCOM Co., Ltd.",
+    "publisher": "CAPCOM Co., Ltd.",
+    "platforms": [
+      {
+        "id": "pc",
+        "name": "PC (Windows)",
+        "abbreviation": "PC"
+      }
+    ],
+    "genres": ["Action", "Adventure"],
+    "tags": ["Survival horror", "Remake", "Third person"],
+    "screenshots": [
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2050650/ss_59d1b19964cc532213df92c8287b75a0bffeb33c.1920x1080.jpg?t=1772502922",
+        "alt": "Resident Evil 4 — promotional screenshot 1"
+      },
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2050650/ss_ab807f8ad9e968a620777caf483cb6020367b9ee.1920x1080.jpg?t=1772502922",
+        "alt": "Resident Evil 4 — promotional screenshot 2"
+      },
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2050650/ss_0442f7fb4327d79802c2db8ea8d23d228a28d896.1920x1080.jpg?t=1772502922",
+        "alt": "Resident Evil 4 — promotional screenshot 3"
+      }
+    ],
+    "metacritic": {
+      "score": 91,
+      "url": "https://www.metacritic.com/game/pc/resident-evil-4?ftag=MCD-06-10aaa1f",
+      "platform": "PC"
+    },
+    "communityRating": null,
+    "estimatedPlaytimeHours": null,
+    "externalLinks": [
+      {
+        "label": "Steam store",
+        "url": "https://store.steampowered.com/app/2050650/"
+      },
+      {
+        "label": "Official website",
+        "url": "https://www.residentevil.com/re4/"
+      }
+    ],
+    "source": {
+      "name": "Steam store",
+      "url": "https://store.steampowered.com/app/2050650/",
+      "verifiedAt": "2026-10-16",
+      "note": "Local demo snapshot. Dates, platforms and critic scores refer to the Steam/PC edition; tags and descriptions are Checkpoint editorial copy."
+    }
+  },
+  {
+    "id": "ghost-of-tsushima",
+    "slug": "ghost-of-tsushima",
+    "title": "Ghost of Tsushima DIRECTOR'S CUT",
+    "coverUrl": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2215430/library_600x900.jpg",
+    "backgroundUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2215430/ss_51eb1a47a41271abb0aa781de576f704d95b601b.1920x1080.jpg?t=1763409398",
+    "description": "Travel across Tsushima as Jin Sakai during a Mongol invasion. Swordplay, stealth, and quiet exploration shape a samurai story.",
+    "releaseDate": "2024-05-16",
+    "releaseDateNote": "Steam edition release",
+    "developer": "Sucker Punch Productions, Nixxes Software",
+    "publisher": "PlayStation Publishing LLC",
+    "platforms": [
+      {
+        "id": "pc",
+        "name": "PC (Windows)",
+        "abbreviation": "PC"
+      }
+    ],
+    "genres": ["Action", "Adventure"],
+    "tags": ["Open world", "Samurai", "Third person"],
+    "screenshots": [
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2215430/ss_51eb1a47a41271abb0aa781de576f704d95b601b.1920x1080.jpg?t=1763409398",
+        "alt": "Ghost of Tsushima DIRECTOR'S CUT — promotional screenshot 1"
+      },
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2215430/ss_d60e16422fc1605181e0fedee3e2cfc1e02c750e.1920x1080.jpg?t=1763409398",
+        "alt": "Ghost of Tsushima DIRECTOR'S CUT — promotional screenshot 2"
+      },
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2215430/ss_11409331d57966ef193d66ffcded569d02a4e034.1920x1080.jpg?t=1763409398",
+        "alt": "Ghost of Tsushima DIRECTOR'S CUT — promotional screenshot 3"
+      }
+    ],
+    "metacritic": null,
+    "communityRating": null,
+    "estimatedPlaytimeHours": null,
+    "externalLinks": [
+      {
+        "label": "Steam store",
+        "url": "https://store.steampowered.com/app/2215430/"
+      },
+      {
+        "label": "Official website",
+        "url": "https://www.playstation.com/en-us/games/ghost-of-tsushima/pc/"
+      }
+    ],
+    "source": {
+      "name": "Steam store",
+      "url": "https://store.steampowered.com/app/2215430/",
+      "verifiedAt": "2026-10-16",
+      "note": "Local demo snapshot. Dates, platforms and critic scores refer to the Steam/PC edition; tags and descriptions are Checkpoint editorial copy."
+    }
+  },
+  {
+    "id": "disco-elysium",
+    "slug": "disco-elysium",
+    "title": "Disco Elysium - The Final Cut",
+    "coverUrl": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/632470/library_600x900.jpg",
+    "backgroundUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/632470/ss_b3694e99ffdb686d1bbbbe16a540d3d2ccd509c4.1920x1080.jpg?t=1780913406",
+    "description": "Investigate a murder in a city full of competing histories and voices. Conversations, choices, and your own unruly thoughts drive this detective role-playing adventure.",
+    "releaseDate": "2019-10-15",
+    "releaseDateNote": "Steam edition release",
+    "developer": "ZA/UM",
+    "publisher": "ZA/UM",
+    "platforms": [
+      {
+        "id": "pc",
+        "name": "PC (Windows)",
+        "abbreviation": "PC"
+      },
+      {
+        "id": "mac",
+        "name": "macOS",
+        "abbreviation": "Mac"
+      }
+    ],
+    "genres": ["RPG"],
+    "tags": ["Detective", "Narrative", "Isometric"],
+    "screenshots": [
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/632470/ss_b3694e99ffdb686d1bbbbe16a540d3d2ccd509c4.1920x1080.jpg?t=1780913406",
+        "alt": "Disco Elysium - The Final Cut — promotional screenshot 1"
+      },
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/632470/ss_9125a718ee9ba85386ae5d4eb820f3266073fc97.1920x1080.jpg?t=1780913406",
+        "alt": "Disco Elysium - The Final Cut — promotional screenshot 2"
+      },
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/632470/ss_4f5fdc3cf42feca8dafb1f7d2910ef96e62708a2.1920x1080.jpg?t=1780913406",
+        "alt": "Disco Elysium - The Final Cut — promotional screenshot 3"
+      }
+    ],
+    "metacritic": {
+      "score": 97,
+      "url": "https://www.metacritic.com/game/pc/disco-elysium-the-final-cut?ftag=MCD-06-10aaa1f",
+      "platform": "PC"
+    },
+    "communityRating": null,
+    "estimatedPlaytimeHours": null,
+    "externalLinks": [
+      {
+        "label": "Steam store",
+        "url": "https://store.steampowered.com/app/632470/"
+      }
+    ],
+    "source": {
+      "name": "Steam store",
+      "url": "https://store.steampowered.com/app/632470/",
+      "verifiedAt": "2026-10-16",
+      "note": "Local demo snapshot. Dates, platforms and critic scores refer to the Steam/PC edition; tags and descriptions are Checkpoint editorial copy."
+    }
+  },
+  {
+    "id": "celeste",
+    "slug": "celeste",
+    "title": "Celeste",
+    "coverUrl": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/504230/library_600x900.jpg",
+    "backgroundUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/504230/ss_1ad297c2044cdcf450ee83e56350cafb590da755.1920x1080.jpg?t=1714089525",
+    "description": "Climb a mountain one screen at a time. Precise platforming and a personal story explore perseverance, uncertainty, and finding your footing.",
+    "releaseDate": "2018-01-25",
+    "releaseDateNote": "Steam edition release",
+    "developer": "Maddy Makes Games Inc., Extremely OK Games, Ltd.",
+    "publisher": "Maddy Makes Games Inc.",
+    "platforms": [
+      {
+        "id": "pc",
+        "name": "PC (Windows)",
+        "abbreviation": "PC"
+      },
+      {
+        "id": "mac",
+        "name": "macOS",
+        "abbreviation": "Mac"
+      },
+      {
+        "id": "linux",
+        "name": "Linux",
+        "abbreviation": "Linux"
+      }
+    ],
+    "genres": ["Action", "Adventure", "Indie"],
+    "tags": ["Platformer", "Pixel art", "Challenging"],
+    "screenshots": [
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/504230/ss_1ad297c2044cdcf450ee83e56350cafb590da755.1920x1080.jpg?t=1714089525",
+        "alt": "Celeste — promotional screenshot 1"
+      },
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/504230/ss_03bfe6bd5ddac7f747c8d2aa1a4f82cfd53c6dcb.1920x1080.jpg?t=1714089525",
+        "alt": "Celeste — promotional screenshot 2"
+      },
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/504230/ss_4b0f0222341b64a37114033aca9994551f27c161.1920x1080.jpg?t=1714089525",
+        "alt": "Celeste — promotional screenshot 3"
+      }
+    ],
+    "metacritic": {
+      "score": 88,
+      "url": "https://www.metacritic.com/game/pc/celeste?ftag=MCD-06-10aaa1f",
+      "platform": "PC"
+    },
+    "communityRating": null,
+    "estimatedPlaytimeHours": null,
+    "externalLinks": [
+      {
+        "label": "Steam store",
+        "url": "https://store.steampowered.com/app/504230/"
+      }
+    ],
+    "source": {
+      "name": "Steam store",
+      "url": "https://store.steampowered.com/app/504230/",
+      "verifiedAt": "2026-10-16",
+      "note": "Local demo snapshot. Dates, platforms and critic scores refer to the Steam/PC edition; tags and descriptions are Checkpoint editorial copy."
+    }
+  },
+  {
+    "id": "stardew-valley",
+    "slug": "stardew-valley",
+    "title": "Stardew Valley",
+    "coverUrl": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/413150/library_600x900.jpg",
+    "backgroundUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/413150/ss_b887651a93b0525739049eb4194f633de2df75be.1920x1080.jpg?t=1786554168",
+    "description": "Turn an inherited farm into a home at your own pace. Grow crops, explore the valley, and get to know the people around you.",
+    "releaseDate": "2016-02-26",
+    "releaseDateNote": "Steam edition release",
+    "developer": "ConcernedApe",
+    "publisher": "ConcernedApe",
+    "platforms": [
+      {
+        "id": "pc",
+        "name": "PC (Windows)",
+        "abbreviation": "PC"
+      },
+      {
+        "id": "mac",
+        "name": "macOS",
+        "abbreviation": "Mac"
+      },
+      {
+        "id": "linux",
+        "name": "Linux",
+        "abbreviation": "Linux"
+      }
+    ],
+    "genres": ["Indie", "RPG", "Simulation"],
+    "tags": ["Farming", "Cozy", "Pixel art"],
+    "screenshots": [
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/413150/ss_b887651a93b0525739049eb4194f633de2df75be.1920x1080.jpg?t=1786554168",
+        "alt": "Stardew Valley — promotional screenshot 1"
+      },
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/413150/ss_9ac899fe2cda15d48b0549bba77ef8c4a090a71c.1920x1080.jpg?t=1786554168",
+        "alt": "Stardew Valley — promotional screenshot 2"
+      },
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/413150/ss_4fa0866709ede3753fdf2745349b528d5e8c4054.1920x1080.jpg?t=1786554168",
+        "alt": "Stardew Valley — promotional screenshot 3"
+      }
+    ],
+    "metacritic": {
+      "score": 89,
+      "url": "https://www.metacritic.com/game/pc/stardew-valley?ftag=MCD-06-10aaa1f",
+      "platform": "PC"
+    },
+    "communityRating": null,
+    "estimatedPlaytimeHours": null,
+    "externalLinks": [
+      {
+        "label": "Steam store",
+        "url": "https://store.steampowered.com/app/413150/"
+      }
+    ],
+    "source": {
+      "name": "Steam store",
+      "url": "https://store.steampowered.com/app/413150/",
+      "verifiedAt": "2026-10-16",
+      "note": "Local demo snapshot. Dates, platforms and critic scores refer to the Steam/PC edition; tags and descriptions are Checkpoint editorial copy."
+    }
+  },
+  {
+    "id": "portal-2",
+    "slug": "portal-2",
+    "title": "Portal 2",
+    "coverUrl": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/620/library_600x900.jpg",
+    "backgroundUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/620/ss_f3f6787d74739d3b2ec8a484b5c994b3d31ef325.1920x1080.jpg?t=1790187113",
+    "description": "Solve spatial puzzles using a device that connects distant surfaces. Explore a deserted testing facility with a sharp sense of humor and a separate cooperative campaign.",
+    "releaseDate": "2011-04-18",
+    "releaseDateNote": "Steam edition release",
+    "developer": "Valve",
+    "publisher": "Valve",
+    "platforms": [
+      {
+        "id": "pc",
+        "name": "PC (Windows)",
+        "abbreviation": "PC"
+      },
+      {
+        "id": "linux",
+        "name": "Linux",
+        "abbreviation": "Linux"
+      }
+    ],
+    "genres": ["Action", "Adventure"],
+    "tags": ["Puzzle", "Sci-fi", "Co-op"],
+    "screenshots": [
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/620/ss_f3f6787d74739d3b2ec8a484b5c994b3d31ef325.1920x1080.jpg?t=1790187113",
+        "alt": "Portal 2 — promotional screenshot 1"
+      },
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/620/ss_6a4f5afdaa98402de9cf0b59fed27bab3256a6f4.1920x1080.jpg?t=1790187113",
+        "alt": "Portal 2 — promotional screenshot 2"
+      },
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/620/ss_0cdd90fafc160b52d08b303d205f9fd4e83cf164.1920x1080.jpg?t=1790187113",
+        "alt": "Portal 2 — promotional screenshot 3"
+      }
+    ],
+    "metacritic": {
+      "score": 95,
+      "url": "https://www.metacritic.com/game/pc/portal-2?ftag=MCD-06-10aaa1f",
+      "platform": "PC"
+    },
+    "communityRating": null,
+    "estimatedPlaytimeHours": null,
+    "externalLinks": [
+      {
+        "label": "Steam store",
+        "url": "https://store.steampowered.com/app/620/"
+      }
+    ],
+    "source": {
+      "name": "Steam store",
+      "url": "https://store.steampowered.com/app/620/",
+      "verifiedAt": "2026-10-16",
+      "note": "Local demo snapshot. Dates, platforms and critic scores refer to the Steam/PC edition; tags and descriptions are Checkpoint editorial copy."
+    }
+  },
+  {
+    "id": "portal",
+    "slug": "portal",
+    "title": "Portal",
+    "coverUrl": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/400/library_600x900.jpg",
+    "backgroundUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/400/0000002582.1920x1080.jpg?t=1745368554",
+    "description": "Think in portals as you move through a series of unusual test chambers. A compact puzzle adventure where space itself becomes your tool.",
+    "releaseDate": "2007-10-10",
+    "releaseDateNote": "Steam edition release",
+    "developer": "Valve",
+    "publisher": "Valve",
+    "platforms": [
+      {
+        "id": "pc",
+        "name": "PC (Windows)",
+        "abbreviation": "PC"
+      },
+      {
+        "id": "linux",
+        "name": "Linux",
+        "abbreviation": "Linux"
+      }
+    ],
+    "genres": ["Action"],
+    "tags": ["Puzzle", "Sci-fi", "First person"],
+    "screenshots": [
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/400/0000002582.1920x1080.jpg?t=1745368554",
+        "alt": "Portal — promotional screenshot 1"
+      },
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/400/0000002583.1920x1080.jpg?t=1745368554",
+        "alt": "Portal — promotional screenshot 2"
+      },
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/400/0000002584.1920x1080.jpg?t=1745368554",
+        "alt": "Portal — promotional screenshot 3"
+      }
+    ],
+    "metacritic": {
+      "score": 90,
+      "url": "https://www.metacritic.com/game/pc/portal?ftag=MCD-06-10aaa1f",
+      "platform": "PC"
+    },
+    "communityRating": null,
+    "estimatedPlaytimeHours": null,
+    "externalLinks": [
+      {
+        "label": "Steam store",
+        "url": "https://store.steampowered.com/app/400/"
+      }
+    ],
+    "source": {
+      "name": "Steam store",
+      "url": "https://store.steampowered.com/app/400/",
+      "verifiedAt": "2026-10-16",
+      "note": "Local demo snapshot. Dates, platforms and critic scores refer to the Steam/PC edition; tags and descriptions are Checkpoint editorial copy."
+    }
+  },
+  {
+    "id": "half-life-2",
+    "slug": "half-life-2",
+    "title": "Half-Life 2",
+    "coverUrl": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/220/library_600x900.jpg",
+    "backgroundUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/220/ss_47b4105b396de408cb8b6b4f358c69e5e2a62dae.1920x1080.jpg?t=1745368545",
+    "description": "Return as Gordon Freeman in a world under occupation. Physics-driven encounters and environmental storytelling carry a first-person journey through city streets and beyond.",
+    "releaseDate": "2004-11-16",
+    "releaseDateNote": "Steam edition release",
+    "developer": "Valve",
+    "publisher": "Valve",
+    "platforms": [
+      {
+        "id": "pc",
+        "name": "PC (Windows)",
+        "abbreviation": "PC"
+      },
+      {
+        "id": "linux",
+        "name": "Linux",
+        "abbreviation": "Linux"
+      }
+    ],
+    "genres": ["Action"],
+    "tags": ["Sci-fi", "First person", "Story rich"],
+    "screenshots": [
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/220/ss_47b4105b396de408cb8b6b4f358c69e5e2a62dae.1920x1080.jpg?t=1745368545",
+        "alt": "Half-Life 2 — promotional screenshot 1"
+      },
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/220/ss_0e499071a60a20b24149ad65a8edb769250f2921.1920x1080.jpg?t=1745368545",
+        "alt": "Half-Life 2 — promotional screenshot 2"
+      },
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/220/ss_ffb00abd45012680e4f209355ec81f961b6dd1fb.1920x1080.jpg?t=1745368545",
+        "alt": "Half-Life 2 — promotional screenshot 3"
+      }
+    ],
+    "metacritic": {
+      "score": 96,
+      "url": "https://www.metacritic.com/game/pc/half-life-2?ftag=MCD-06-10aaa1f",
+      "platform": "PC"
+    },
+    "communityRating": null,
+    "estimatedPlaytimeHours": null,
+    "externalLinks": [
+      {
+        "label": "Steam store",
+        "url": "https://store.steampowered.com/app/220/"
+      }
+    ],
+    "source": {
+      "name": "Steam store",
+      "url": "https://store.steampowered.com/app/220/",
+      "verifiedAt": "2026-10-16",
+      "note": "Local demo snapshot. Dates, platforms and critic scores refer to the Steam/PC edition; tags and descriptions are Checkpoint editorial copy."
+    }
+  },
+  {
+    "id": "skyrim",
+    "slug": "skyrim",
+    "title": "The Elder Scrolls V: Skyrim Special Edition",
+    "coverUrl": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/489830/library_600x900.jpg",
+    "backgroundUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/489830/ss_73c1a0bb7e1720c8a1847186c3ddd837d3ca7a8d.1920x1080.jpg?t=1786648247",
+    "description": "Explore a northern province of Tamriel in this Special Edition of Skyrim. Choose your skills, follow quests, and discover stories beyond the main path.",
+    "releaseDate": "2016-10-27",
+    "releaseDateNote": "Steam edition release",
+    "developer": "Bethesda Game Studios",
+    "publisher": "Bethesda Softworks",
+    "platforms": [
+      {
+        "id": "pc",
+        "name": "PC (Windows)",
+        "abbreviation": "PC"
+      }
+    ],
+    "genres": ["RPG"],
+    "tags": ["Open world", "Fantasy", "Exploration"],
+    "screenshots": [
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/489830/ss_73c1a0bb7e1720c8a1847186c3ddd837d3ca7a8d.1920x1080.jpg?t=1786648247",
+        "alt": "The Elder Scrolls V: Skyrim Special Edition — promotional screenshot 1"
+      },
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/489830/ss_d64b646612ab1402bdda8e400672aa0dbcb352ea.1920x1080.jpg?t=1786648247",
+        "alt": "The Elder Scrolls V: Skyrim Special Edition — promotional screenshot 2"
+      },
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/489830/ss_b6bb6f79278505b3f48567f08c21f7a0eb171c68.1920x1080.jpg?t=1786648247",
+        "alt": "The Elder Scrolls V: Skyrim Special Edition — promotional screenshot 3"
+      }
+    ],
+    "metacritic": {
+      "score": 74,
+      "url": "https://www.metacritic.com/game/pc/the-elder-scrolls-v-skyrim-special-edition?ftag=MCD-06-10aaa1f",
+      "platform": "PC"
+    },
+    "communityRating": null,
+    "estimatedPlaytimeHours": null,
+    "externalLinks": [
+      {
+        "label": "Steam store",
+        "url": "https://store.steampowered.com/app/489830/"
+      }
+    ],
+    "source": {
+      "name": "Steam store",
+      "url": "https://store.steampowered.com/app/489830/",
+      "verifiedAt": "2026-10-16",
+      "note": "Local demo snapshot. Dates, platforms and critic scores refer to the Steam/PC edition; tags and descriptions are Checkpoint editorial copy."
+    }
+  },
+  {
+    "id": "dark-souls-iii",
+    "slug": "dark-souls-iii",
+    "title": "DARK SOULS™ III",
+    "coverUrl": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/374320/library_600x900.jpg",
+    "backgroundUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/374320/ss_5efd318b85a3917d1c6e717f4cb813b47547cd6f.1920x1080.jpg?t=1748630784",
+    "description": "Enter a decaying fantasy world of interconnected paths and demanding encounters. Learn from each setback and shape a character around your preferred approach.",
+    "releaseDate": "2016-04-11",
+    "releaseDateNote": "Steam edition release",
+    "developer": "FromSoftware, Inc.",
+    "publisher": "FromSoftware, Inc., Bandai Namco Entertainment",
+    "platforms": [
+      {
+        "id": "pc",
+        "name": "PC (Windows)",
+        "abbreviation": "PC"
+      }
+    ],
+    "genres": ["Action"],
+    "tags": ["Dark fantasy", "Challenging", "Third person"],
+    "screenshots": [
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/374320/ss_5efd318b85a3917d1c6e717f4cb813b47547cd6f.1920x1080.jpg?t=1748630784",
+        "alt": "DARK SOULS™ III — promotional screenshot 1"
+      },
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/374320/ss_1c0fa39091901496d77cf4cecfea4ffb056d6452.1920x1080.jpg?t=1748630784",
+        "alt": "DARK SOULS™ III — promotional screenshot 2"
+      },
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/374320/ss_1318a04ef11d87f38aebe6d47a96124f8f888ca8.1920x1080.jpg?t=1748630784",
+        "alt": "DARK SOULS™ III — promotional screenshot 3"
+      }
+    ],
+    "metacritic": {
+      "score": 89,
+      "url": "https://www.metacritic.com/game/pc/dark-souls-iii?ftag=MCD-06-10aaa1f",
+      "platform": "PC"
+    },
+    "communityRating": null,
+    "estimatedPlaytimeHours": null,
+    "externalLinks": [
+      {
+        "label": "Steam store",
+        "url": "https://store.steampowered.com/app/374320/"
+      }
+    ],
+    "source": {
+      "name": "Steam store",
+      "url": "https://store.steampowered.com/app/374320/",
+      "verifiedAt": "2026-10-16",
+      "note": "Local demo snapshot. Dates, platforms and critic scores refer to the Steam/PC edition; tags and descriptions are Checkpoint editorial copy."
+    }
+  },
+  {
+    "id": "death-stranding",
+    "slug": "death-stranding",
+    "title": "DEATH STRANDING DIRECTOR'S CUT",
+    "coverUrl": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1850570/library_600x900.jpg",
+    "backgroundUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1850570/ss_f64a1140651ff5af30eb63bb6e5b41753d00a98e.1920x1080.jpg?t=1773400635",
+    "description": "Reconnect isolated settlements by carrying cargo across a fractured landscape. Route planning, balance, and shared structures turn travel into the heart of the adventure.",
+    "releaseDate": "2022-03-30",
+    "releaseDateNote": "Steam edition release",
+    "developer": "KOJIMA PRODUCTIONS",
+    "publisher": " 505 Games",
+    "platforms": [
+      {
+        "id": "pc",
+        "name": "PC (Windows)",
+        "abbreviation": "PC"
+      }
+    ],
+    "genres": ["Action", "Adventure"],
+    "tags": ["Exploration", "Sci-fi", "Atmospheric"],
+    "screenshots": [
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1850570/ss_f64a1140651ff5af30eb63bb6e5b41753d00a98e.1920x1080.jpg?t=1773400635",
+        "alt": "DEATH STRANDING DIRECTOR'S CUT — promotional screenshot 1"
+      },
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1850570/ss_4b6d7d010d1701b2b57bf8ef1b4975a04b3d632f.1920x1080.jpg?t=1773400635",
+        "alt": "DEATH STRANDING DIRECTOR'S CUT — promotional screenshot 2"
+      },
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1850570/ss_bc8812817c074772822c1d1e8a6b016983cf05e8.1920x1080.jpg?t=1773400635",
+        "alt": "DEATH STRANDING DIRECTOR'S CUT — promotional screenshot 3"
+      }
+    ],
+    "metacritic": {
+      "score": 85,
+      "url": "https://www.metacritic.com/game/pc/death-stranding-directors-cut?ftag=MCD-06-10aaa1f",
+      "platform": "PC"
+    },
+    "communityRating": null,
+    "estimatedPlaytimeHours": null,
+    "externalLinks": [
+      {
+        "label": "Steam store",
+        "url": "https://store.steampowered.com/app/1850570/"
+      }
+    ],
+    "source": {
+      "name": "Steam store",
+      "url": "https://store.steampowered.com/app/1850570/",
+      "verifiedAt": "2026-10-16",
+      "note": "Local demo snapshot. Dates, platforms and critic scores refer to the Steam/PC edition; tags and descriptions are Checkpoint editorial copy."
+    }
+  },
+  {
+    "id": "control",
+    "slug": "control",
+    "title": "CONTROL Ultimate Edition",
+    "coverUrl": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/870780/library_600x900.jpg",
+    "backgroundUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/870780/ss_8376498631b089e52fb5c75ffe119e0de5e6aed1.1920x1080.jpg?t=1781607969",
+    "description": "Investigate an otherworldly federal bureau as Jesse Faden. Shifting architecture, supernatural abilities, and scattered records reveal a strange institutional mystery.",
+    "releaseDate": "2020-08-27",
+    "releaseDateNote": "Steam edition release",
+    "developer": "Remedy Entertainment",
+    "publisher": "Remedy Entertainment",
+    "platforms": [
+      {
+        "id": "pc",
+        "name": "PC (Windows)",
+        "abbreviation": "PC"
+      },
+      {
+        "id": "mac",
+        "name": "macOS",
+        "abbreviation": "Mac"
+      }
+    ],
+    "genres": ["Action", "Adventure"],
+    "tags": ["Supernatural", "Third person", "Mystery"],
+    "screenshots": [
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/870780/ss_8376498631b089e52fb5c75ffe119e0de5e6aed1.1920x1080.jpg?t=1781607969",
+        "alt": "CONTROL Ultimate Edition — promotional screenshot 1"
+      },
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/870780/ss_5a16ce565951479e142c56a23f19d88333d84945.1920x1080.jpg?t=1781607969",
+        "alt": "CONTROL Ultimate Edition — promotional screenshot 2"
+      },
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/870780/ss_c038bb7b20d72ba5d33cc95f7235aefa0b84a706.1920x1080.jpg?t=1781607969",
+        "alt": "CONTROL Ultimate Edition — promotional screenshot 3"
+      }
+    ],
+    "metacritic": {
+      "score": 85,
+      "url": "https://www.metacritic.com/game/pc/control?ftag=MCD-06-10aaa1f",
+      "platform": "PC"
+    },
+    "communityRating": null,
+    "estimatedPlaytimeHours": null,
+    "externalLinks": [
+      {
+        "label": "Steam store",
+        "url": "https://store.steampowered.com/app/870780/"
+      },
+      {
+        "label": "Official website",
+        "url": "https://controlgame.com"
+      }
+    ],
+    "source": {
+      "name": "Steam store",
+      "url": "https://store.steampowered.com/app/870780/",
+      "verifiedAt": "2026-10-16",
+      "note": "Local demo snapshot. Dates, platforms and critic scores refer to the Steam/PC edition; tags and descriptions are Checkpoint editorial copy."
+    }
+  },
+  {
+    "id": "outer-wilds",
+    "slug": "outer-wilds",
+    "title": "Outer Wilds",
+    "coverUrl": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/753640/library_600x900.jpg",
+    "backgroundUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/753640/ss_ec95a283483f0438be40d033f08b9d956e748d54.1920x1080.jpg?t=1785424341",
+    "description": "Explore a small solar system caught in a repeating moment. Follow clues across unusual planets, learning how its places and histories fit together.",
+    "releaseDate": "2020-06-18",
+    "releaseDateNote": "Steam edition release",
+    "developer": "Mobius Digital",
+    "publisher": "Annapurna Interactive",
+    "platforms": [
+      {
+        "id": "pc",
+        "name": "PC (Windows)",
+        "abbreviation": "PC"
+      }
+    ],
+    "genres": ["Action", "Adventure"],
+    "tags": ["Exploration", "Space", "Mystery"],
+    "screenshots": [
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/753640/ss_ec95a283483f0438be40d033f08b9d956e748d54.1920x1080.jpg?t=1785424341",
+        "alt": "Outer Wilds — promotional screenshot 1"
+      },
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/753640/ss_09f0fa8d9b8d7da1408cf4e03303d896cbd9be18.1920x1080.jpg?t=1785424341",
+        "alt": "Outer Wilds — promotional screenshot 2"
+      },
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/753640/ss_c624a6b8edca0d451605592edd927dbcc14917a8.1920x1080.jpg?t=1785424341",
+        "alt": "Outer Wilds — promotional screenshot 3"
+      }
+    ],
+    "metacritic": {
+      "score": 85,
+      "url": "https://www.metacritic.com/game/pc/outer-wilds?ftag=MCD-06-10aaa1f",
+      "platform": "PC"
+    },
+    "communityRating": null,
+    "estimatedPlaytimeHours": null,
+    "externalLinks": [
+      {
+        "label": "Steam store",
+        "url": "https://store.steampowered.com/app/753640/"
+      }
+    ],
+    "source": {
+      "name": "Steam store",
+      "url": "https://store.steampowered.com/app/753640/",
+      "verifiedAt": "2026-10-16",
+      "note": "Local demo snapshot. Dates, platforms and critic scores refer to the Steam/PC edition; tags and descriptions are Checkpoint editorial copy."
+    }
+  },
+  {
+    "id": "subnautica",
+    "slug": "subnautica",
+    "title": "Subnautica",
+    "coverUrl": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/264710/library_600x900.jpg",
+    "backgroundUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/264710/ss_e182b6b20bb797500f9f63c561586d920d44e37c.1920x1080.jpg?t=1777456112",
+    "description": "Survive beneath the ocean of an alien planet. Gather resources, build shelters, and venture deeper to discover what lies below.",
+    "releaseDate": "2018-01-23",
+    "releaseDateNote": "Steam edition release",
+    "developer": "Unknown Worlds Entertainment",
+    "publisher": "Unknown Worlds Entertainment",
+    "platforms": [
+      {
+        "id": "pc",
+        "name": "PC (Windows)",
+        "abbreviation": "PC"
+      },
+      {
+        "id": "mac",
+        "name": "macOS",
+        "abbreviation": "Mac"
+      }
+    ],
+    "genres": ["Adventure", "Indie"],
+    "tags": ["Survival", "Underwater", "Exploration"],
+    "screenshots": [
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/264710/ss_e182b6b20bb797500f9f63c561586d920d44e37c.1920x1080.jpg?t=1777456112",
+        "alt": "Subnautica — promotional screenshot 1"
+      },
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/264710/ss_970a13f246e33e0df26d93baf9f8e975732adb4b.1920x1080.jpg?t=1777456112",
+        "alt": "Subnautica — promotional screenshot 2"
+      },
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/264710/ss_5f2f2ea498cdc632cbffd6cf37c1a09670eb3272.1920x1080.jpg?t=1777456112",
+        "alt": "Subnautica — promotional screenshot 3"
+      }
+    ],
+    "metacritic": {
+      "score": 87,
+      "url": "https://www.metacritic.com/game/pc/subnautica?ftag=MCD-06-10aaa1f",
+      "platform": "PC"
+    },
+    "communityRating": null,
+    "estimatedPlaytimeHours": null,
+    "externalLinks": [
+      {
+        "label": "Steam store",
+        "url": "https://store.steampowered.com/app/264710/"
+      }
+    ],
+    "source": {
+      "name": "Steam store",
+      "url": "https://store.steampowered.com/app/264710/",
+      "verifiedAt": "2026-10-16",
+      "note": "Local demo snapshot. Dates, platforms and critic scores refer to the Steam/PC edition; tags and descriptions are Checkpoint editorial copy."
+    }
+  },
+  {
+    "id": "doom-eternal",
+    "slug": "doom-eternal",
+    "title": "DOOM Eternal",
+    "coverUrl": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/782330/library_600x900.jpg",
+    "backgroundUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/782330/ss_4f93a7c5003d49cb32f6c0c6e547452b284580a0.1920x1080.jpg?t=1783432602",
+    "description": "Push through a demon invasion with fast movement and an arsenal of specialized weapons. Combat rewards managing resources and staying on the move.",
+    "releaseDate": "2020-03-19",
+    "releaseDateNote": "Steam edition release",
+    "developer": "id Software",
+    "publisher": "Bethesda Softworks",
+    "platforms": [
+      {
+        "id": "pc",
+        "name": "PC (Windows)",
+        "abbreviation": "PC"
+      }
+    ],
+    "genres": ["Action"],
+    "tags": ["First person", "Fast paced", "Demons"],
+    "screenshots": [
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/782330/ss_4f93a7c5003d49cb32f6c0c6e547452b284580a0.1920x1080.jpg?t=1783432602",
+        "alt": "DOOM Eternal — promotional screenshot 1"
+      },
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/782330/ss_7e6a2148321c8024285e3924903d8897cac95358.1920x1080.jpg?t=1783432602",
+        "alt": "DOOM Eternal — promotional screenshot 2"
+      },
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/782330/ss_af3b43c4be0029b52ceefaf55ebe1918e2cb3471.1920x1080.jpg?t=1783432602",
+        "alt": "DOOM Eternal — promotional screenshot 3"
+      }
+    ],
+    "metacritic": {
+      "score": 88,
+      "url": "https://www.metacritic.com/game/pc/doom-eternal?ftag=MCD-06-10aaa1f",
+      "platform": "PC"
+    },
+    "communityRating": null,
+    "estimatedPlaytimeHours": null,
+    "externalLinks": [
+      {
+        "label": "Steam store",
+        "url": "https://store.steampowered.com/app/782330/"
+      },
+      {
+        "label": "Official website",
+        "url": "https://slayersclub.bethesda.net/en"
+      }
+    ],
+    "source": {
+      "name": "Steam store",
+      "url": "https://store.steampowered.com/app/782330/",
+      "verifiedAt": "2026-10-16",
+      "note": "Local demo snapshot. Dates, platforms and critic scores refer to the Steam/PC edition; tags and descriptions are Checkpoint editorial copy."
+    }
+  },
+  {
+    "id": "dead-cells",
+    "slug": "dead-cells",
+    "title": "Dead Cells",
+    "coverUrl": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/588650/library_600x900.jpg",
+    "backgroundUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/588650/ss_ac28000ade40cc2fe5c128f32ac98ba33c008a7a.1920x1080.jpg?t=1779086887",
+    "description": "Fight through a changing island in a run-based action platformer. Experiment with weapons and routes as repeated attempts reveal more of its world.",
+    "releaseDate": "2018-08-06",
+    "releaseDateNote": "Steam edition release",
+    "developer": "Motion Twin",
+    "publisher": "Motion Twin",
+    "platforms": [
+      {
+        "id": "pc",
+        "name": "PC (Windows)",
+        "abbreviation": "PC"
+      },
+      {
+        "id": "mac",
+        "name": "macOS",
+        "abbreviation": "Mac"
+      },
+      {
+        "id": "linux",
+        "name": "Linux",
+        "abbreviation": "Linux"
+      }
+    ],
+    "genres": ["Action", "Adventure", "Indie"],
+    "tags": ["Roguelike", "Metroidvania", "Pixel art"],
+    "screenshots": [
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/588650/ss_ac28000ade40cc2fe5c128f32ac98ba33c008a7a.1920x1080.jpg?t=1779086887",
+        "alt": "Dead Cells — promotional screenshot 1"
+      },
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/588650/ss_7bde51ea6c8f6289e85ea1d8c1c941e1f8bfee91.1920x1080.jpg?t=1779086887",
+        "alt": "Dead Cells — promotional screenshot 2"
+      },
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/588650/ss_e87e72a247918d8493892e035d5e1b4b84470d2f.1920x1080.jpg?t=1779086887",
+        "alt": "Dead Cells — promotional screenshot 3"
+      }
+    ],
+    "metacritic": {
+      "score": 89,
+      "url": "https://www.metacritic.com/game/pc/dead-cells?ftag=MCD-06-10aaa1f",
+      "platform": "PC"
+    },
+    "communityRating": null,
+    "estimatedPlaytimeHours": null,
+    "externalLinks": [
+      {
+        "label": "Steam store",
+        "url": "https://store.steampowered.com/app/588650/"
+      },
+      {
+        "label": "Official website",
+        "url": "https://dead-cells.com/"
+      }
+    ],
+    "source": {
+      "name": "Steam store",
+      "url": "https://store.steampowered.com/app/588650/",
+      "verifiedAt": "2026-10-16",
+      "note": "Local demo snapshot. Dates, platforms and critic scores refer to the Steam/PC edition; tags and descriptions are Checkpoint editorial copy."
+    }
+  },
+  {
+    "id": "slay-the-spire",
+    "slug": "slay-the-spire",
+    "title": "Slay the Spire",
+    "coverUrl": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/646570/library_600x900.jpg",
+    "backgroundUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/646570/ss_c171816f7ecd35b5b46d2fa27532f4c5b8ca3cc5.1920x1080.jpg?t=1774015376",
+    "description": "Build a deck as you climb a branching series of encounters. Each card, relic, and route choice changes the shape of your next battle.",
+    "releaseDate": "2019-01-23",
+    "releaseDateNote": "Steam edition release",
+    "developer": "Mega Crit",
+    "publisher": "Mega Crit",
+    "platforms": [
+      {
+        "id": "pc",
+        "name": "PC (Windows)",
+        "abbreviation": "PC"
+      },
+      {
+        "id": "mac",
+        "name": "macOS",
+        "abbreviation": "Mac"
+      },
+      {
+        "id": "linux",
+        "name": "Linux",
+        "abbreviation": "Linux"
+      }
+    ],
+    "genres": ["Indie", "Strategy"],
+    "tags": ["Deckbuilding", "Roguelike", "Turn-based"],
+    "screenshots": [
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/646570/ss_c171816f7ecd35b5b46d2fa27532f4c5b8ca3cc5.1920x1080.jpg?t=1774015376",
+        "alt": "Slay the Spire — promotional screenshot 1"
+      },
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/646570/ss_01aa3e7759e457bfbf2422f31c325d7b3ba8a6eb.1920x1080.jpg?t=1774015376",
+        "alt": "Slay the Spire — promotional screenshot 2"
+      },
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/646570/ss_b757436d08ba08292796bfed9c60e7cc99d5f2c3.1920x1080.jpg?t=1774015376",
+        "alt": "Slay the Spire — promotional screenshot 3"
+      }
+    ],
+    "metacritic": {
+      "score": 89,
+      "url": "https://www.metacritic.com/game/pc/slay-the-spire?ftag=MCD-06-10aaa1f",
+      "platform": "PC"
+    },
+    "communityRating": null,
+    "estimatedPlaytimeHours": null,
+    "externalLinks": [
+      {
+        "label": "Steam store",
+        "url": "https://store.steampowered.com/app/646570/"
+      },
+      {
+        "label": "Official website",
+        "url": "https://www.megacrit.com/"
+      }
+    ],
+    "source": {
+      "name": "Steam store",
+      "url": "https://store.steampowered.com/app/646570/",
+      "verifiedAt": "2026-10-16",
+      "note": "Local demo snapshot. Dates, platforms and critic scores refer to the Steam/PC edition; tags and descriptions are Checkpoint editorial copy."
+    }
+  },
+  {
+    "id": "civilization-vi",
+    "slug": "civilization-vi",
+    "title": "Sid Meier’s Civilization® VI",
+    "coverUrl": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/289070/library_600x900.jpg",
+    "backgroundUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/289070/ss_12cc6e1f4084de5bc0f66bfdbe3aaf3e59388b53.1920x1080.jpg?t=1784651829",
+    "description": "Guide a civilization across the ages through exploration, research, diplomacy, and war. Plan cities across the map and pursue different routes to victory.",
+    "releaseDate": "2016-10-20",
+    "releaseDateNote": "Steam edition release",
+    "developer": "Firaxis Games, Aspyr (Mac), Aspyr (Linux)",
+    "publisher": "2K, Aspyr (Mac), Aspyr (Linux)",
+    "platforms": [
+      {
+        "id": "pc",
+        "name": "PC (Windows)",
+        "abbreviation": "PC"
+      },
+      {
+        "id": "mac",
+        "name": "macOS",
+        "abbreviation": "Mac"
+      },
+      {
+        "id": "linux",
+        "name": "Linux",
+        "abbreviation": "Linux"
+      }
+    ],
+    "genres": ["Strategy"],
+    "tags": ["Strategy", "Turn-based", "Historical"],
+    "screenshots": [
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/289070/ss_12cc6e1f4084de5bc0f66bfdbe3aaf3e59388b53.1920x1080.jpg?t=1784651829",
+        "alt": "Sid Meier’s Civilization® VI — promotional screenshot 1"
+      },
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/289070/ss_6c4a3cfb61f1a9677cf2ac549c2816a4e651f741.1920x1080.jpg?t=1784651829",
+        "alt": "Sid Meier’s Civilization® VI — promotional screenshot 2"
+      },
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/289070/ss_b2bf12299c38214fe520af0f724a6349d17ed330.1920x1080.jpg?t=1784651829",
+        "alt": "Sid Meier’s Civilization® VI — promotional screenshot 3"
+      }
+    ],
+    "metacritic": {
+      "score": 88,
+      "url": "https://www.metacritic.com/game/pc/sid-meiers-civilization-vi?ftag=MCD-06-10aaa1f",
+      "platform": "PC"
+    },
+    "communityRating": null,
+    "estimatedPlaytimeHours": null,
+    "externalLinks": [
+      {
+        "label": "Steam store",
+        "url": "https://store.steampowered.com/app/289070/"
+      }
+    ],
+    "source": {
+      "name": "Steam store",
+      "url": "https://store.steampowered.com/app/289070/",
+      "verifiedAt": "2026-10-16",
+      "note": "Local demo snapshot. Dates, platforms and critic scores refer to the Steam/PC edition; tags and descriptions are Checkpoint editorial copy."
+    }
+  },
+  {
+    "id": "terraria",
+    "slug": "terraria",
+    "title": "Terraria",
+    "coverUrl": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/105600/library_600x900.jpg",
+    "backgroundUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/105600/ss_8c03886f214d2108cafca13845533eaa3d87d83f.1920x1080.jpg?t=1769844435",
+    "description": "Dig, build, and explore a world of underground discoveries. Gather materials and prepare for increasingly demanding encounters in a sandbox adventure.",
+    "releaseDate": "2011-05-16",
+    "releaseDateNote": "Steam edition release",
+    "developer": "Re-Logic",
+    "publisher": "Re-Logic",
+    "platforms": [
+      {
+        "id": "pc",
+        "name": "PC (Windows)",
+        "abbreviation": "PC"
+      },
+      {
+        "id": "mac",
+        "name": "macOS",
+        "abbreviation": "Mac"
+      },
+      {
+        "id": "linux",
+        "name": "Linux",
+        "abbreviation": "Linux"
+      }
+    ],
+    "genres": ["Action", "Adventure", "Indie", "RPG"],
+    "tags": ["Sandbox", "Crafting", "Pixel art"],
+    "screenshots": [
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/105600/ss_8c03886f214d2108cafca13845533eaa3d87d83f.1920x1080.jpg?t=1769844435",
+        "alt": "Terraria — promotional screenshot 1"
+      },
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/105600/ss_ae168a00ab08104ba266dc30232654d4b3c919e5.1920x1080.jpg?t=1769844435",
+        "alt": "Terraria — promotional screenshot 2"
+      },
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/105600/ss_9edd98caaf9357c2f40758f354475a56e356e8b0.1920x1080.jpg?t=1769844435",
+        "alt": "Terraria — promotional screenshot 3"
+      }
+    ],
+    "metacritic": {
+      "score": 83,
+      "url": "https://www.metacritic.com/game/pc/terraria?ftag=MCD-06-10aaa1f",
+      "platform": "PC"
+    },
+    "communityRating": null,
+    "estimatedPlaytimeHours": null,
+    "externalLinks": [
+      {
+        "label": "Steam store",
+        "url": "https://store.steampowered.com/app/105600/"
+      }
+    ],
+    "source": {
+      "name": "Steam store",
+      "url": "https://store.steampowered.com/app/105600/",
+      "verifiedAt": "2026-10-16",
+      "note": "Local demo snapshot. Dates, platforms and critic scores refer to the Steam/PC edition; tags and descriptions are Checkpoint editorial copy."
+    }
+  },
+  {
+    "id": "no-mans-sky",
+    "slug": "no-mans-sky",
+    "title": "No Man's Sky",
+    "coverUrl": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/275850/library_600x900.jpg",
+    "backgroundUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/275850/6c2ddcffe192b0e155a69aa2a1dd3f33b863033d/ss_6c2ddcffe192b0e155a69aa2a1dd3f33b863033d.1920x1080.jpg?t=1789479023",
+    "description": "Travel between planets in a vast science-fiction universe. Explore strange environments, build bases, and choose your own path through space.",
+    "releaseDate": "2016-08-12",
+    "releaseDateNote": "Steam edition release",
+    "developer": "Hello Games",
+    "publisher": "Hello Games",
+    "platforms": [
+      {
+        "id": "pc",
+        "name": "PC (Windows)",
+        "abbreviation": "PC"
+      },
+      {
+        "id": "mac",
+        "name": "macOS",
+        "abbreviation": "Mac"
+      }
+    ],
+    "genres": ["Action", "Adventure"],
+    "tags": ["Space", "Exploration", "Survival"],
+    "screenshots": [
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/275850/6c2ddcffe192b0e155a69aa2a1dd3f33b863033d/ss_6c2ddcffe192b0e155a69aa2a1dd3f33b863033d.1920x1080.jpg?t=1789479023",
+        "alt": "No Man's Sky — promotional screenshot 1"
+      },
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/275850/cad26f1dc67d28327ccdabeecb68d5006ad5639b/ss_cad26f1dc67d28327ccdabeecb68d5006ad5639b.1920x1080.jpg?t=1789479023",
+        "alt": "No Man's Sky — promotional screenshot 2"
+      },
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/275850/227c7c49d81de5f77d260495885e433efaece06d/ss_227c7c49d81de5f77d260495885e433efaece06d.1920x1080.jpg?t=1789479023",
+        "alt": "No Man's Sky — promotional screenshot 3"
+      }
+    ],
+    "metacritic": {
+      "score": 61,
+      "url": "https://www.metacritic.com/game/pc/no-mans-sky?ftag=MCD-06-10aaa1f",
+      "platform": "PC"
+    },
+    "communityRating": null,
+    "estimatedPlaytimeHours": null,
+    "externalLinks": [
+      {
+        "label": "Steam store",
+        "url": "https://store.steampowered.com/app/275850/"
+      },
+      {
+        "label": "Official website",
+        "url": "https://www.nomanssky.com/"
+      }
+    ],
+    "source": {
+      "name": "Steam store",
+      "url": "https://store.steampowered.com/app/275850/",
+      "verifiedAt": "2026-10-16",
+      "note": "Local demo snapshot. Dates, platforms and critic scores refer to the Steam/PC edition; tags and descriptions are Checkpoint editorial copy."
+    }
+  },
+  {
+    "id": "it-takes-two",
+    "slug": "it-takes-two",
+    "title": "It Takes Two",
+    "coverUrl": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1426210/library_600x900.jpg",
+    "backgroundUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1426210/ss_3e59753eefaba9a7704a18e902b48e8d38e95e0b.1920x1080.jpg?t=1777395376",
+    "description": "Work together through an adventure designed for two players. Each chapter introduces new cooperative mechanics as a transformed couple tries to find a way forward.",
+    "releaseDate": "2021-03-25",
+    "releaseDateNote": "Steam edition release",
+    "developer": "Hazelight Studios",
+    "publisher": "Electronic Arts",
+    "platforms": [
+      {
+        "id": "pc",
+        "name": "PC (Windows)",
+        "abbreviation": "PC"
+      }
+    ],
+    "genres": ["Action", "Adventure"],
+    "tags": ["Co-op", "Platformer", "Puzzle"],
+    "screenshots": [
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1426210/ss_3e59753eefaba9a7704a18e902b48e8d38e95e0b.1920x1080.jpg?t=1777395376",
+        "alt": "It Takes Two — promotional screenshot 1"
+      },
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1426210/ss_6e987a0678b013bfd0073a9ac4703e1f04ca4dea.1920x1080.jpg?t=1777395376",
+        "alt": "It Takes Two — promotional screenshot 2"
+      },
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1426210/ss_fdac523e3ea4d2f32a44449bb8c224857563bd7d.1920x1080.jpg?t=1777395376",
+        "alt": "It Takes Two — promotional screenshot 3"
+      }
+    ],
+    "metacritic": {
+      "score": 89,
+      "url": "https://www.metacritic.com/game/pc/it-takes-two?ftag=MCD-06-10aaa1f",
+      "platform": "PC"
+    },
+    "communityRating": null,
+    "estimatedPlaytimeHours": null,
+    "externalLinks": [
+      {
+        "label": "Steam store",
+        "url": "https://store.steampowered.com/app/1426210/"
+      },
+      {
+        "label": "Official website",
+        "url": "https://www.ea.com/games/it-takes-two"
+      }
+    ],
+    "source": {
+      "name": "Steam store",
+      "url": "https://store.steampowered.com/app/1426210/",
+      "verifiedAt": "2026-10-16",
+      "note": "Local demo snapshot. Dates, platforms and critic scores refer to the Steam/PC edition; tags and descriptions are Checkpoint editorial copy."
+    }
+  },
+  {
+    "id": "ori-and-the-will-of-the-wisps",
+    "slug": "ori-and-the-will-of-the-wisps",
+    "title": "Ori and the Will of the Wisps",
+    "coverUrl": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1057090/library_600x900.jpg",
+    "backgroundUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1057090/ss_0cf0ec6681ae5771173790dbc99ddb3bf3b886ad.1920x1080.jpg?t=1759530749",
+    "description": "Explore a luminous world as Ori in a movement-focused adventure. New abilities open paths through forests, ruins, and carefully staged encounters.",
+    "releaseDate": "2020-03-10",
+    "releaseDateNote": "Steam edition release",
+    "developer": "Moon Studios GmbH",
+    "publisher": "Xbox Game Studios",
+    "platforms": [
+      {
+        "id": "pc",
+        "name": "PC (Windows)",
+        "abbreviation": "PC"
+      }
+    ],
+    "genres": ["Action"],
+    "tags": ["Metroidvania", "Platformer", "Atmospheric"],
+    "screenshots": [
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1057090/ss_0cf0ec6681ae5771173790dbc99ddb3bf3b886ad.1920x1080.jpg?t=1759530749",
+        "alt": "Ori and the Will of the Wisps — promotional screenshot 1"
+      },
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1057090/ss_f8ac174b7949e89fe1939a7bd2c471785dee55f0.1920x1080.jpg?t=1759530749",
+        "alt": "Ori and the Will of the Wisps — promotional screenshot 2"
+      },
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1057090/ss_3ae04b208aaff3869f69617c47449ec1d7a06513.1920x1080.jpg?t=1759530749",
+        "alt": "Ori and the Will of the Wisps — promotional screenshot 3"
+      }
+    ],
+    "metacritic": {
+      "score": 88,
+      "url": "https://www.metacritic.com/game/pc/ori-and-the-will-of-the-wisps?ftag=MCD-06-10aaa1f",
+      "platform": "PC"
+    },
+    "communityRating": null,
+    "estimatedPlaytimeHours": null,
+    "externalLinks": [
+      {
+        "label": "Steam store",
+        "url": "https://store.steampowered.com/app/1057090/"
+      },
+      {
+        "label": "Official website",
+        "url": "https://www.orithegame.com"
+      }
+    ],
+    "source": {
+      "name": "Steam store",
+      "url": "https://store.steampowered.com/app/1057090/",
+      "verifiedAt": "2026-10-16",
+      "note": "Local demo snapshot. Dates, platforms and critic scores refer to the Steam/PC edition; tags and descriptions are Checkpoint editorial copy."
+    }
+  },
+  {
+    "id": "stray",
+    "slug": "stray",
+    "title": "Stray",
+    "coverUrl": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1332010/library_600x900.jpg",
+    "backgroundUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1332010/ss_88e209a90c2039fa76bca6fa08c641365be38d50.1920x1080.jpg?t=1785424330",
+    "description": "Navigate a walled city from a cat’s point of view. Explore rooftops and alleys, solve environmental puzzles, and meet its robotic inhabitants.",
+    "releaseDate": "2022-07-19",
+    "releaseDateNote": "Steam edition release",
+    "developer": "BlueTwelve Studio",
+    "publisher": "Annapurna Interactive",
+    "platforms": [
+      {
+        "id": "pc",
+        "name": "PC (Windows)",
+        "abbreviation": "PC"
+      },
+      {
+        "id": "mac",
+        "name": "macOS",
+        "abbreviation": "Mac"
+      }
+    ],
+    "genres": ["Adventure", "Indie"],
+    "tags": ["Cats", "Exploration", "Atmospheric"],
+    "screenshots": [
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1332010/ss_88e209a90c2039fa76bca6fa08c641365be38d50.1920x1080.jpg?t=1785424330",
+        "alt": "Stray — promotional screenshot 1"
+      },
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1332010/ss_e8f0cbd5efdba352e89c4cfcee3fe991a1e1be8a.1920x1080.jpg?t=1785424330",
+        "alt": "Stray — promotional screenshot 2"
+      },
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1332010/ss_2221af260c64362fdc835a9dca65f6f1d1192b25.1920x1080.jpg?t=1785424330",
+        "alt": "Stray — promotional screenshot 3"
+      }
+    ],
+    "metacritic": {
+      "score": 82,
+      "url": "https://www.metacritic.com/game/pc/stray?ftag=MCD-06-10aaa1f",
+      "platform": "PC"
+    },
+    "communityRating": null,
+    "estimatedPlaytimeHours": null,
+    "externalLinks": [
+      {
+        "label": "Steam store",
+        "url": "https://store.steampowered.com/app/1332010/"
+      },
+      {
+        "label": "Official website",
+        "url": "https://stray.game"
+      }
+    ],
+    "source": {
+      "name": "Steam store",
+      "url": "https://store.steampowered.com/app/1332010/",
+      "verifiedAt": "2026-10-16",
+      "note": "Local demo snapshot. Dates, platforms and critic scores refer to the Steam/PC edition; tags and descriptions are Checkpoint editorial copy."
+    }
+  },
+  {
+    "id": "balatro",
+    "slug": "balatro",
+    "title": "Balatro",
+    "coverUrl": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2379780/library_600x900.jpg",
+    "backgroundUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2379780/96208723dbedef49d71bf1b0a74aee1689018c50/ss_96208723dbedef49d71bf1b0a74aee1689018c50.1920x1080.jpg?t=1790693638",
+    "description": "Build powerful card combinations in a poker-inspired roguelike. Jokers and upgrades reshape the rules as you work toward higher scoring hands.",
+    "releaseDate": "2024-02-20",
+    "releaseDateNote": "Steam edition release",
+    "developer": "LocalThunk",
+    "publisher": "Playstack",
+    "platforms": [
+      {
+        "id": "pc",
+        "name": "PC (Windows)",
+        "abbreviation": "PC"
+      },
+      {
+        "id": "mac",
+        "name": "macOS",
+        "abbreviation": "Mac"
+      }
+    ],
+    "genres": ["Casual", "Indie", "Strategy"],
+    "tags": ["Deckbuilding", "Roguelike", "Strategy"],
+    "screenshots": [
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2379780/96208723dbedef49d71bf1b0a74aee1689018c50/ss_96208723dbedef49d71bf1b0a74aee1689018c50.1920x1080.jpg?t=1790693638",
+        "alt": "Balatro — promotional screenshot 1"
+      },
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2379780/ss_4862112e5030f74a5818cd4c31347d699ac5adf3.1920x1080.jpg?t=1790693638",
+        "alt": "Balatro — promotional screenshot 2"
+      },
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2379780/ss_3be65a7dd3be072d567e11883d208861a7e959fa.1920x1080.jpg?t=1790693638",
+        "alt": "Balatro — promotional screenshot 3"
+      }
+    ],
+    "metacritic": {
+      "score": 90,
+      "url": "https://www.metacritic.com/game/pc/balatro?ftag=MCD-06-10aaa1f",
+      "platform": "PC"
+    },
+    "communityRating": null,
+    "estimatedPlaytimeHours": null,
+    "externalLinks": [
+      {
+        "label": "Steam store",
+        "url": "https://store.steampowered.com/app/2379780/"
+      },
+      {
+        "label": "Official website",
+        "url": "https://www.playbalatro.com/"
+      }
+    ],
+    "source": {
+      "name": "Steam store",
+      "url": "https://store.steampowered.com/app/2379780/",
+      "verifiedAt": "2026-10-16",
+      "note": "Local demo snapshot. Dates, platforms and critic scores refer to the Steam/PC edition; tags and descriptions are Checkpoint editorial copy."
+    }
+  },
+  {
+    "id": "clair-obscur-expedition-33",
+    "slug": "clair-obscur-expedition-33",
+    "title": "Clair Obscur: Expedition 33",
+    "coverUrl": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1903340/library_600x900.jpg",
+    "backgroundUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1903340/ss_483a27df5072beb3a4650634a764bda750fbcb82.1920x1080.jpg?t=1782830877",
+    "description": "Join an expedition in a painterly fantasy world. Turn-based battles incorporate timed actions while exploration reveals the story of a threatened society.",
+    "releaseDate": "2025-04-24",
+    "releaseDateNote": "Steam edition release",
+    "developer": "Sandfall Interactive",
+    "publisher": "Kepler Interactive",
+    "platforms": [
+      {
+        "id": "pc",
+        "name": "PC (Windows)",
+        "abbreviation": "PC"
+      }
+    ],
+    "genres": ["Action", "RPG"],
+    "tags": ["Fantasy", "Turn-based", "Story rich"],
+    "screenshots": [
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1903340/ss_483a27df5072beb3a4650634a764bda750fbcb82.1920x1080.jpg?t=1782830877",
+        "alt": "Clair Obscur: Expedition 33 — promotional screenshot 1"
+      },
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1903340/ss_e49800e906e8a0f00707458c836567c933603bac.1920x1080.jpg?t=1782830877",
+        "alt": "Clair Obscur: Expedition 33 — promotional screenshot 2"
+      },
+      {
+        "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1903340/ss_b8089016095e6a16e324a59c45b2f24a439bd0b3.1920x1080.jpg?t=1782830877",
+        "alt": "Clair Obscur: Expedition 33 — promotional screenshot 3"
+      }
+    ],
+    "metacritic": {
+      "score": 91,
+      "url": "https://www.metacritic.com/game/pc/clair-obscur-expedition-33?ftag=MCD-06-10aaa1f",
+      "platform": "PC"
+    },
+    "communityRating": null,
+    "estimatedPlaytimeHours": null,
+    "externalLinks": [
+      {
+        "label": "Steam store",
+        "url": "https://store.steampowered.com/app/1903340/"
+      },
+      {
+        "label": "Official website",
+        "url": "https://www.expedition33.com/"
+      }
+    ],
+    "source": {
+      "name": "Steam store",
+      "url": "https://store.steampowered.com/app/1903340/",
+      "verifiedAt": "2026-10-16",
+      "note": "Local demo snapshot. Dates, platforms and critic scores refer to the Steam/PC edition; tags and descriptions are Checkpoint editorial copy."
+    }
+  }
+]

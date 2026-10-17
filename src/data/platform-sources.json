@@ -1,0 +1,49 @@
+{
+  "elden-ring": {
+    "platforms": [
+      { "id": "ps4", "name": "PlayStation 4", "abbreviation": "PS4" },
+      { "id": "ps5", "name": "PlayStation 5", "abbreviation": "PS5" },
+      { "id": "xbox-one", "name": "Xbox One", "abbreviation": "XB1" },
+      {
+        "id": "xbox-series",
+        "name": "Xbox Series X|S",
+        "abbreviation": "XSX|S"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Bandai Namco · platform information",
+        "url": "https://www.bandainamcoent.com/games/elden-ring"
+      }
+    ]
+  },
+  "baldurs-gate-3": {
+    "platforms": [
+      { "id": "ps5", "name": "PlayStation 5", "abbreviation": "PS5" },
+      {
+        "id": "xbox-series",
+        "name": "Xbox Series X|S",
+        "abbreviation": "XSX|S"
+      }
+    ],
+    "sources": [
+      {
+        "name": "Larian · platform information",
+        "url": "https://baldursgate3.game/"
+      }
+    ]
+  },
+  "celeste": {
+    "platforms": [
+      { "id": "ps4", "name": "PlayStation 4", "abbreviation": "PS4" },
+      { "id": "xbox-one", "name": "Xbox One", "abbreviation": "XB1" },
+      { "id": "switch", "name": "Nintendo Switch", "abbreviation": "Switch" }
+    ],
+    "sources": [
+      {
+        "name": "Celeste · platform information",
+        "url": "https://www.celestegame.com/"
+      }
+    ]
+  }
+}

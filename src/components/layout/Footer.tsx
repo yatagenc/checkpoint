@@ -15,7 +15,7 @@ export function Footer() {
           <Link to="/explore">
             Discover <ArrowUpRight size={13} />
           </Link>
-          <span>Phase 01 · Local preview</span>
+          <span>Phase 04 · Local journals</span>
         </div>
       </div>
     </footer>

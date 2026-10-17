@@ -4,6 +4,7 @@ import { HomePage } from "./pages/HomePage";
 import { ExplorePage } from "./pages/ExplorePage";
 import { LibraryPage } from "./pages/LibraryPage";
 import { DiaryPage } from "./pages/DiaryPage";
+import { PlaythroughPage } from "./pages/PlaythroughPage";
 import { ProfilePage } from "./pages/ProfilePage";
 import { GameDetailsPage } from "./pages/GameDetailsPage";
 import { NotFoundPage } from "./pages/NotFoundPage";
@@ -16,6 +17,7 @@ export default function App() {
         <Route path="explore" element={<ExplorePage />} />
         <Route path="library" element={<LibraryPage />} />
         <Route path="diary" element={<DiaryPage />} />
+        <Route path="diary/:playthroughId" element={<PlaythroughPage />} />
         <Route path="profile" element={<ProfilePage />} />
         <Route path="games/:id" element={<GameDetailsPage />} />
         <Route path="*" element={<NotFoundPage />} />

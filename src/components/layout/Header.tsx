@@ -1,6 +1,7 @@
-import { useState } from "react";
-import { Flag, Menu, Search, UserRound, X } from "lucide-react";
+import { useRef, useState } from "react";
+import { Flag, Menu, UserRound, X } from "lucide-react";
 import { Link, NavLink, useLocation } from "react-router";
+import { GameSearch } from "./GameSearch";
 
 const links = [
   { to: "/explore", label: "Explore" },
@@ -9,11 +10,22 @@ const links = [
 ];
 
 export function Header() {
-  const [openPath, setOpenPath] = useState<string | null>(null);
-  const { pathname } = useLocation();
-  const open = openPath === pathname;
+  const { key } = useLocation();
+  return <HeaderContent key={key} />;
+}
+function HeaderContent() {
+  const [open, setOpen] = useState(false);
+  const toggle = useRef<HTMLButtonElement>(null);
   return (
-    <header className="site-header">
+    <header
+      className="site-header"
+      onKeyDown={(event) => {
+        if (event.key === "Escape" && open) {
+          setOpen(false);
+          toggle.current?.focus();
+        }
+      }}
+    >
       <div className="container header-inner">
         <Link to="/" className="brand" aria-label="Checkpoint home">
           <Flag size={23} fill="currentColor" strokeWidth={1.5} />
@@ -29,13 +41,8 @@ export function Header() {
           ))}
         </nav>
         <div className="header-actions">
-          <div className="search-placeholder">
-            <Search size={16} />
-            <input
-              aria-label="Game search — coming in a future phase"
-              placeholder="Search games · coming soon"
-              disabled
-            />
+          <div className="desktop-search">
+            <GameSearch />
           </div>
           <NavLink
             className="profile-link"
@@ -45,11 +52,12 @@ export function Header() {
             <UserRound size={18} />
           </NavLink>
           <button
+            ref={toggle}
             className="menu-toggle"
             aria-label={open ? "Close navigation" : "Open navigation"}
             aria-expanded={open}
             aria-controls="mobile-nav"
-            onClick={() => setOpenPath(open ? null : pathname)}
+            onClick={() => setOpen((value) => !value)}
           >
             {open ? <X /> : <Menu />}
           </button>
@@ -61,16 +69,13 @@ export function Header() {
           className="mobile-nav container"
           aria-label="Mobile navigation"
         >
+          <GameSearch onSearch={() => setOpen(false)} />
           {[
             { to: "/", label: "Home" },
             ...links,
             { to: "/profile", label: "Profile" },
           ].map((link) => (
-            <NavLink
-              key={link.to}
-              to={link.to}
-              onClick={() => setOpenPath(null)}
-            >
+            <NavLink key={link.to} to={link.to} onClick={() => setOpen(false)}>
               {link.label}
             </NavLink>
           ))}

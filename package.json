@@ -8,7 +8,9 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "test": "node --experimental-strip-types --test src/lib/storage.test.ts"
+    "test": "node --experimental-strip-types --test src/lib/*.test.ts && node --test scripts/test-ui.mjs",
+    "typecheck": "tsc -b",
+    "refresh:catalog": "node scripts/refresh-catalog.mjs"
   },
   "dependencies": {
     "lucide-react": "^1.58.0",
@@ -27,6 +29,7 @@
     "eslint-plugin-react-hooks": "^7.1.1",
     "eslint-plugin-react-refresh": "^0.5.7",
     "globals": "^17.13.0",
+    "jsdom": "^29.1.1",
     "tailwindcss": "^4.3.3",
     "typescript": "^5.9.3",
     "typescript-eslint": "^8.71.2",
