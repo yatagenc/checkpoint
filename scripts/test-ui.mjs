@@ -553,6 +553,80 @@ test("discovery and routes work through React event handlers", async (t) => {
       },
     );
     await t.test(
+      "Hollow Knight review is visible beside personal controls after saving and reload; edits and deletion preserve other records",
+      async () => {
+        const personalKey = "checkpoint:v1:personal-data";
+        const before = dom.window.localStorage.getItem(personalKey);
+        const beforeJournals = dom.window.localStorage.getItem("checkpoint:v1:journals");
+        const unrelated = stored();
+        try {
+          await render("/games/hollow-knight");
+          await clickText("Add to Library");
+          await click(".game-personal-actions .favorite-button");
+          await clickText("Write Review");
+          await field("dialog input[name=reviewTitle]", "A world worth exploring");
+          await field("dialog textarea[name=reviewText]", "Hallownest stayed with me.\nEvery path felt rewarding.");
+          await click('dialog input[value="4.5"]');
+          await submitDialog();
+          const section = () => query(".personal-review-section");
+          const assertReview = (title, body, rating) => {
+            assert.equal(section().previousElementSibling.className, "game-personal-actions");
+            assert.equal(section().getAttribute("aria-labelledby"), query(".personal-review-section h2").id);
+            assert.equal(query(".personal-review-section h3").textContent, title);
+            assert.equal(query(".personal-review-section .review-text").textContent, body);
+            assert.match(query(".personal-review-section .personal-score").textContent, new RegExp(`${rating} / 5`));
+            assert.match(section().textContent, /not published online/);
+            const saved = stored().reviews.find((item) => item.gameId === "hollow-knight");
+            assert.deepEqual([...section().querySelectorAll("time")].map((time) => time.dateTime), [saved.createdAt, saved.updatedAt]);
+          };
+          const body = "Hallownest stayed with me.\nEvery path felt rewarding.";
+          assertReview("A world worth exploring", body, 4.5);
+          const saved = stored().reviews.find((item) => item.gameId === "hollow-knight");
+          // Unmount the app/provider and load the same page from LocalStorage.
+          await render("/games/hollow-knight");
+          assertReview("A world worth exploring", body, 4.5);
+          await clickText("Edit review", section());
+          await field("dialog input[name=reviewTitle]", "The hidden ending");
+          await field("dialog textarea[name=reviewText]", "A spoiler-sensitive conclusion.");
+          await click("dialog input[name=spoilers]");
+          await click('dialog input[value="5"]');
+          await submitDialog();
+          assert.equal(document.querySelector(".personal-review-section h3"), null);
+          assert.equal(document.querySelector(".personal-review-section .review-text"), null);
+          await clickText("Reveal review", section());
+          assertReview("The hidden ending", "A spoiler-sensitive conclusion.", 5);
+          await render("/games/hollow-knight");
+          assert.equal(document.querySelector(".personal-review-section .review-text"), null);
+          await clickText("Reveal review", section());
+          await clickText("Edit Review", query(".game-personal-actions"));
+          await field("dialog textarea[name=reviewText]", "An edited spoiler-sensitive conclusion.");
+          await submitDialog();
+          assert.equal(document.querySelector(".personal-review-section .review-text"), null, "Saving re-conceals spoilers");
+          const updated = stored().reviews.find((item) => item.gameId === "hollow-knight");
+          assert.equal(updated.id, saved.id);
+          assert.equal(updated.createdAt, saved.createdAt);
+          const libraryBeforeDelete = stored().library;
+          await clickText("Delete review", section());
+          await clickText("Keep it");
+          assert.ok(section().querySelector(".review-card"));
+          await clickText("Delete review", section());
+          await clickText("Delete permanently");
+          assert.equal(document.querySelector(".personal-review-section .review-card"), null);
+          assert.match(section().textContent, /No review yet/);
+          assert.match(query(".game-personal-actions").textContent, /Write Review/);
+          assert.deepEqual(stored().library, libraryBeforeDelete);
+          assert.deepEqual(stored().reviews, unrelated.reviews);
+          assert.deepEqual(stored().library.filter((item) => item.gameId !== "hollow-knight"), unrelated.library);
+          assert.equal(dom.window.localStorage.getItem("checkpoint:v1:journals"), beforeJournals);
+          await render("/games/hollow-knight");
+          assert.equal(document.querySelector(".personal-review-section .review-card"), null);
+        } finally {
+          if (before === null) dom.window.localStorage.removeItem(personalKey);
+          else dom.window.localStorage.setItem(personalKey, before);
+        }
+      },
+    );
+    await t.test(
       "favorite limit and deletion confirmations protect the actual records",
       async () => {
         for (const id of ["hades", "celeste", "hollow-knight", "portal"]) {
@@ -1300,6 +1374,7 @@ test("discovery and routes work through React event handlers", async (t) => {
           await clickText("Write Review");
           await field("dialog textarea[name=reviewText]", "A remote review.");
           await submitDialog();
+          assert.equal(query(".personal-review-section .review-text").textContent, "A remote review.");
           assert.ok(
             stored().library.some(
               (entry) =>
@@ -1335,6 +1410,9 @@ test("discovery and routes work through React event handlers", async (t) => {
           globalThis.fetch = async () => {
             throw new Error("Offline");
           };
+          await render("/games/rawg:701235", true);
+          assert.equal(query(".personal-review-section .review-text").textContent, "A remote review.");
+          assert.match(query(".personal-review-section .personal-score").textContent, /4.5 \/ 5/);
           await render("/library", true);
           assert.match(query("main").textContent, /Remote journey fixture/);
           await render("/profile", true);

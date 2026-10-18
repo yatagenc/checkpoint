@@ -152,28 +152,38 @@ export function GameDetails({ game }: { game: Game }) {
             </div>
           </div>
           <GamePersonalActions game={game} />
+          <section
+            className="personal-review-section"
+            aria-labelledby="your-review-heading"
+          >
+            <div className="section-heading">
+              <div>
+                <p className="eyebrow">YOUR PERSPECTIVE</p>
+                <h2 id="your-review-heading">Your Review</h2>
+              </div>
+              <span className="badge">
+                {review ? "Saved on this device" : "Only on this device"}
+              </span>
+            </div>
+            <p className="sample-note">
+              Your personal review, stored only in this browser. It is not
+              published online or included in community reviews.
+            </p>
+            {review ? (
+              <ReviewCard
+                key={`${review.id}:${review.updatedAt}`}
+                review={review}
+                gameTitle={game.title}
+              />
+            ) : (
+              <p className="subtle-notice">
+                No review yet. Capture your thoughts using Write Review above.
+              </p>
+            )}
+          </section>
         </div>
       </div>
       <GameJournals game={game} />
-      <section className="detail-section personal-review-section">
-        <p className="eyebrow">YOUR PERSPECTIVE</p>
-        <h2>Your review</h2>
-        <p className="sample-note">
-          Reviews stay in this browser. Visibility preferences do not publish or
-          restrict access.
-        </p>
-        {review ? (
-          <ReviewCard
-            key={`${review.id}:${review.updatedAt}`}
-            review={review}
-            gameTitle={game.title}
-          />
-        ) : (
-          <p className="subtle-notice">
-            No review yet. Capture your thoughts using Write Review above.
-          </p>
-        )}
-      </section>
       <section className="detail-section">
         <div className="section-heading">
           <div>

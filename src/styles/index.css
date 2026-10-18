@@ -1318,8 +1318,26 @@ h3 {
   color: var(--color-accent);
   border-color: #6c967c;
 }
-.personal-review-section > h2 {
-  margin-bottom: 16px;
+.personal-review-section {
+  border-top: 1px solid var(--color-line);
+  margin-top: 28px;
+  padding-top: 28px;
+  min-width: 0;
+}
+.personal-review-section .section-heading {
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.personal-review-section > .sample-note {
+  margin-bottom: 18px;
+  line-height: 1.7;
+}
+.personal-review-section .review-card {
+  border-top: 2px solid var(--color-accent);
+}
+.personal-review-section .review-text {
+  max-width: 65ch;
 }
 .review-card {
   border: 1px solid var(--color-line);

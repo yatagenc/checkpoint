@@ -31,15 +31,20 @@ export function ReviewCard({
       </div>
       <div className="review-meta">
         <span>
-          {new Intl.DateTimeFormat("en", { dateStyle: "medium" }).format(
-            new Date(review.createdAt),
-          )}
+          Created{" "}
+          <time dateTime={review.createdAt}>
+            {new Intl.DateTimeFormat("en", { dateStyle: "medium" }).format(
+              new Date(review.createdAt),
+            )}
+          </time>
         </span>
         <span>
           Updated{" "}
-          {new Intl.DateTimeFormat("en", { dateStyle: "medium" }).format(
-            new Date(review.updatedAt),
-          )}
+          <time dateTime={review.updatedAt}>
+            {new Intl.DateTimeFormat("en", { dateStyle: "medium" }).format(
+              new Date(review.updatedAt),
+            )}
+          </time>
         </span>
         <span>
           {
